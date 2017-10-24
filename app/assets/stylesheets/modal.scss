@@ -1,0 +1,11 @@
+.modal-background {
+  background-color: gray;
+  position:absolute;
+}
+
+.modal-visible {
+  height:100vh;
+  width: 100%;
+  opacity: 0.6;
+  z-index: 10;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-const Modal = ({visible, component: Component}) => (
-  <div className="modal-background">
+const Modal = ({visible, component: Component, classStr}) => (
+  <div className={classStr}>
     <div className="modal-content">
       {visible ? <Component /> : null}
     </div>
@@ -14,9 +14,13 @@ const mapStateToProps = (state) => {
     return {
       visible: true,
       component: state.ui.modal.component,
+      classStr: "modal-background modal-visible"
     }
   } else {
-    return {visible: false};
+    return {
+      visible: false,
+      classStr: "modal-background"
+    };
   }
 };
 

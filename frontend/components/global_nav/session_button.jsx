@@ -7,7 +7,7 @@ class SessionButton extends React.Component {
     const action = this.props.loggedIn ?
     this.props.logout : this.props.launchSignInModal;
 
-    debugger
+
     return (
       <button className = "session-button" onClick = {action}>
         {this.props.buttonType}</button>
