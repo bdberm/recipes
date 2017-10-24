@@ -1,0 +1,32 @@
+.global-nav {
+  height: 65px;
+  display: flex;
+  background:blue;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  color: #7d131b;
+}
+
+.logo {
+  background: red;
+  width: 21%;
+  border-right: 1px solid #ccc;
+}
+
+.search-container {
+  background: orange;
+  width: 50%;
+  height:inherit;
+}
+
+.session-button {
+  background: purple;
+  width: 20%;
+  /*margin-top: 11px;*/
+  border: 1px solid #ccc;
+  border-bottom: none;
+  height: 85%;
+  margin-top: auto;
+
+}
