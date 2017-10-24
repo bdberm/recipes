@@ -6,5 +6,5 @@ import ui from './ui/ui_reducer';
 export default combineReducers({
   session,
   errors,
-
+  ui,
 });
