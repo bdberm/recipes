@@ -19,6 +19,11 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   after_initialize :ensure_session_token
 
+  has_many :authored_recipes,
+    class_name: 'Recipe',
+    foreign_key: :author_id,
+    primary_key: :id
+
   attr_reader :password
 
   def self.generate_session_token
