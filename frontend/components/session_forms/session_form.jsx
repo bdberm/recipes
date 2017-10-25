@@ -49,6 +49,8 @@ class SessionForm extends React.Component {
         <div className = "session-form-image"></div>
 
         <div className = "session-form-wrapper" >
+          <span className="modal-close" onClick={this.props.removeModal}>
+            &times;</span>
           <h3>{headerText}</h3>
           <p>{switchSentence}
             <SessionLinkButtonContainer
