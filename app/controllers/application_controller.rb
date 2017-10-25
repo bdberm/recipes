@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   end
 
-  def logged_in
+  def logged_in?
     !!self.current_user
   end
 end

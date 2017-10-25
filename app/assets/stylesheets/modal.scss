@@ -1,11 +1,117 @@
 .modal-background {
-  background-color: gray;
+  background: rgba(0, 0, 0, 0.3);
   position:absolute;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .modal-visible {
-  height:100vh;
-  width: 100%;
-  opacity: 0.6;
-  z-index: 10;
+  display:block;
+}
+
+.session-form-container {
+  position: absolute;
+  width: 70%;
+  // max-width: 950px;
+  height: 450px;
+  left: 15%;
+  top: 50px;
+
+  background: white;
+  opacity:1;
+  z-index:3;
+  border: 1px solid #ccc;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.session-form-image {
+  background-image: image-url("chocolate_chip.jpg");
+  width: 50%;
+  height: inherit;
+  background-position: -40px -360px;
+}
+
+.session-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.session-form-wrapper h3{
+  height:30px;
+  margin: 0 auto;
+  padding-top: 40px;
+  border-bottom: 1px solid #ccc;
+  width: 75%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.session-form-wrapper p {
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.session-form-wrapper ul {
+  margin: 0 auto;
+  width: 85%;
+}
+
+.session-form-wrapper ul {
+  margin-top: 10px;
+  color: #e33d26;
+}
+
+
+
+.session-form-wrapper form {
+  height: 80%;
+  padding-top: 15px;
+}
+
+
+.session-form-wrapper form input {
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  line-height: 2;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.session-form-wrapper form input[type="submit"] {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #e33d26;
+  border: none;
+  padding: 0;
+}
+
+.session-link-button {
+  font-weight: bold;
+  color: #e33d26;
+
+}
+
+@media screen and (max-width: 750px) {
+  .session-form-image {
+    display: none;
+  }
+
+  .session-form-container {
+    display: block;
+  }
+  .session-form-wrapper {
+    width: 100%;
+  }
+
 }

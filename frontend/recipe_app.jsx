@@ -5,7 +5,13 @@ import configureStore from './store/store';
 import {signup, login, logout} from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    store = configureStore({session: {currentUser: window.currentUser}});
+  } else {
+    store = configureStore();
+  }
+
   window.store = store;
   window.signup = signup;
   window.login = login;

@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
       visible: true,
       component: state.ui.modal.component,
       classStr: "modal-background modal-visible"
-    }
+    };
   } else {
     return {
       visible: false,
