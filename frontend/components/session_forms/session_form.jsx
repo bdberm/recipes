@@ -10,11 +10,19 @@ class SessionForm extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.removeErrors();
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.currentUser) {
       this.props.removeModal();
+    }
+    if (newProps.formType !== this.props.formType) {
+      this.props.removeErrors();
     }
   }
 
@@ -28,6 +36,11 @@ class SessionForm extends React.Component {
   handleSubmit() {
     const user = merge({}, this.state);
     this.props.submitAction(user);
+  }
+
+  handleClose() {
+    this.props.removeModal();
+    this.props.removeErrors();
   }
 
 
@@ -49,7 +62,7 @@ class SessionForm extends React.Component {
         <div className = "session-form-image"></div>
 
         <div className = "session-form-wrapper" >
-          <span className="modal-close" onClick={this.props.removeModal}>
+          <span className="modal-close" onClick={this.handleClose}>
             &times;</span>
           <h3>{headerText}</h3>
           <p>{switchSentence}
@@ -58,9 +71,7 @@ class SessionForm extends React.Component {
               switchText= {switchButtonText}
             />
             .</p>
-          <ul>
-            {errors}
-          </ul>
+
           <form onSubmit ={this.handleSubmit}>
             <input type="text" placeholder = "Email"
               onChange = {this.handleInput("email")}/>
@@ -68,6 +79,9 @@ class SessionForm extends React.Component {
               onChange = {this.handleInput("password")}/>
             <input type="submit" value = {this.props.formType} />
           </form>
+          <ul>
+            {errors}
+          </ul>
         </div>
       </div>
     );

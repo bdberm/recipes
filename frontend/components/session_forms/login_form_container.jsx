@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {login} from '../../actions/session_actions';
+import {login, removeSessionErrors} from '../../actions/session_actions';
 import {removeModal, receiveModal} from '../../actions/ui_actions';
 import SessionForm from './session_form.jsx';
 import SignupFormContainer from './signup_form_container';
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => (
   {
     submitAction: ((user) => dispatch(login(user))),
     removeModal: (() => dispatch(removeModal())),
-
+    removeErrors: (() => dispatch(removeSessionErrors())),
   }
 );
 
