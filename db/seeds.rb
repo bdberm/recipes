@@ -41,7 +41,7 @@ end
 
 Step.destroy_all
 350.times do
-  Ingredient.create!({
+  Step.create!({
     recipe_id: Recipe.all.sample.id,
     content: Faker::Hipster.paragraph(2),
     ord: rand(9) + 1

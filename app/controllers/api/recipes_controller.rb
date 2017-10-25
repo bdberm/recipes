@@ -1,9 +1,9 @@
 class Api::RecipesController < ApplicationController
   def index
-    @Recipes = Recipe.all
+    @recipes = Recipe.all.includes(:author)
   end
 
   def show
-    @Recipe = Recipe.find(params[:id])
+    @recipe = Recipe.includes(:author, :ingredients, :steps).order('ingredients.ord, steps.ord').find(params[:id])
   end
 end
