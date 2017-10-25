@@ -26,6 +26,6 @@ export const fetchRecipes = () => (dispatch) => (
 
 export const fetchRecipe = (recipeId) => (dispatch) => (
   RecipeAPIUtil.fetchRecipe(recipeId).then(
-    ((recipe) => dispatch(receiveRecipes(recipe)))
+    ((recipe) => dispatch(receiveRecipe(recipe)))
   )
 );

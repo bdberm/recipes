@@ -8,4 +8,5 @@ export default combineReducers({
   session,
   errors,
   ui,
+  entities
 });

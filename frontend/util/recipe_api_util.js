@@ -5,9 +5,9 @@ export const fetchRecipes = () => (
   })
 );
 
-export const fetchRecipe = (recipeId) => {
+export const fetchRecipe = (recipeId) => (
   $.ajax({
     method: 'get',
     url: `api/recipes/${recipeId}`,
-  });
-};
+  })
+);
