@@ -45,9 +45,12 @@ class SessionForm extends React.Component {
 
 
   render() {
-    const errors = this.props.errors.map((error, idx) => {
-      return <li key={idx}>{error}</li>;
-    });
+    let errors;
+    if(this.props.errors) {
+      errors = this.props.errors.map((error, idx) => {
+        return <li key={idx}>{error}</li>;
+      });
+    }
 
     const switchButtonText = (this.props.formType === "Sign up")
     ? "Log in" : "Sign up";
