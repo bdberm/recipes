@@ -12,7 +12,7 @@ const Modal = ({visible, component: Component, classStr, remove }) => (
 );
 
 const mapStateToProps = (state) => {
-  if(state.ui.modal.component) {
+  if (state.ui.modal.component) {
     return {
       visible: true,
       component: state.ui.modal.component,

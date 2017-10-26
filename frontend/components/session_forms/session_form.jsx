@@ -34,7 +34,8 @@ class SessionForm extends React.Component {
 
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     const user = merge({}, this.state);
     this.props.submitAction(user);
   }
@@ -76,11 +77,11 @@ class SessionForm extends React.Component {
             />
             .</p>
 
-          <form onSubmit ={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit}>
             <input type="text" placeholder = "Email"
-              onChange = {this.handleInput("email")}/>
+              onChange={this.handleInput("email")} />
             <input type="password" placeholder = "Password"
-              onChange = {this.handleInput("password")}/>
+              onChange={this.handleInput("password")} />
             <input type="submit" value = {this.props.formType} />
           </form>
           <ul>
