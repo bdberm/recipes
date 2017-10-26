@@ -1,0 +1,47 @@
+.recipe-index-item {
+  box-sizing: border-box;
+  width: 235px;
+  height: 278px;
+  display: block;
+  margin-top: 35px;
+  box-shadow: 8px 8px 5px gray;
+  position: relative;
+}
+
+.recipe-index-image {
+  background-image: image-url("pizza_placeholder.jpg");
+  height: 56%;
+  margin: 0;
+}
+
+.receipe-index-info {
+  height: 44%;
+  background: white;
+
+};
+
+.receipe-index-info h3, h4 {
+
+}
+
+.recipe-index {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.index-wrapper {
+  background: #F5F5F5;
+}
+
+.save-from-index {
+  background-image: image-url("save-ribbon.png");
+  background-size: contain;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+}

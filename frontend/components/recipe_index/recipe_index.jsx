@@ -8,14 +8,16 @@ class RecipeIndex extends React.Component {
   }
 
   render() {
-    const recipes = this.props.recipes.map((recipe) => {
-      return <RecipeIndexItem recipe={recipe} />;
+    const recipes = this.props.recipes.map((recipe, idx) => {
+      return <RecipeIndexItem key={idx} recipe={recipe} />;
     });
 
     return (
-      <ul>
-        {recipes}
-      </ul>
+      <div className="index-wrapper">
+        <ul className="recipe-index">
+          {recipes}
+        </ul>
+      </div>
     );
 
   }
