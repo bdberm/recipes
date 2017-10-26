@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {signup, login, logout} from './actions/session_actions';
-import {fetchRecipes, fetchRecipe} from './actions/recipe_actions';
+import {convertMinutesToTimeString} from './util/time_converter';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -12,11 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-
+  window.convertMinutesToTimeString = convertMinutesToTimeString;
   window.store = store;
-  window.login = login;
-  window.fetchRecipes = fetchRecipes;
-  window.fetchRecipe = fetchRecipe;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
