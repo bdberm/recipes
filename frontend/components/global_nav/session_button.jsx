@@ -9,8 +9,8 @@ class SessionButton extends React.Component {
 
 
     return (
-      <button className = "session-button" onClick = {action}>
-        {this.props.buttonType}</button>
+      <button className = {`session-button${this.props.loggedInClass}`}
+        onClick = {action}> {this.props.buttonType}</button>
     );
 
 

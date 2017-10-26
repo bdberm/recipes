@@ -1,33 +1,52 @@
 .global-nav {
   height: 65px;
   display: flex;
-  background:blue;
-  justify-content: flex-start;
+  // background:blue;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ccc;
   // color: #7d131b;
-  color: white;
+  color: #e33d26;
 }
 
 .logo {
-  background: red;
+
   width: 21%;
-  border-right: 1px solid #ccc;
+
 }
 
 .search-container {
-  background: orange;
-  width: 50%;
+  // background: orange;
+  width: 68%;
   height:inherit;
+  border-left: 1px solid #ccc;
 }
 
-.session-button {
-  background: purple;
-  width: 20%;
-  /*margin-top: 11px;*/
-  border: 1px solid #ccc;
-  border-bottom: none;
-  height: 85%;
-  margin-top: auto;
 
+
+.global-nav > button {
+  width: 10%;
+  // margin-right: 8px;
+  /*margin-top: 11px;*/
+  border-left: 1px solid #ccc;
+
+  height: 100%;
+  margin-top: auto;
+  text-align: center;
+  color: #e33d26;
+  font-weight:bold;
+}
+
+.recipe-box-button {
+  display: none;
+}
+
+
+
+.recipe-box-button.loggedIn {
+  display: block;
+}
+
+.search-container.loggedIn {
+  width: 59%
 }
