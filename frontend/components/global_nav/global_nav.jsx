@@ -19,4 +19,4 @@ const GlobalNav = ({loggedInClass}) => (
   </nav>
 );
 
-export default connect(null, null)(GlobalNav);
+export default connect(mapStateToProps, null)(GlobalNav);

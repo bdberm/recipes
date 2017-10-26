@@ -13,12 +13,12 @@ class SessionForm extends React.Component {
     this.handleClose = this.handleClose.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.removeErrors();
   }
 
   componentWillReceiveProps(newProps) {
-    debugger
+
     if (newProps.currentUser) {
       this.props.removeModal();
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-// import {signup, login, logout} from './actions/session_actions';
+import {signup, login, logout} from './actions/session_actions';
 import {fetchRecipes, fetchRecipe} from './actions/recipe_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.store = store;
+  window.login = login;
   window.fetchRecipes = fetchRecipes;
   window.fetchRecipe = fetchRecipe;
 
