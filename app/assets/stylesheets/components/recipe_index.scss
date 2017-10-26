@@ -37,8 +37,13 @@
   height: 278px;
   display: block;
   margin-top: 35px;
-  box-shadow: 8px 8px 5px gray;
+
   position: relative;
+}
+
+.recipe-index-item:hover {
+
+  box-shadow: 8px 8px 5px gray;
 }
 
 .recipe-index-image {
