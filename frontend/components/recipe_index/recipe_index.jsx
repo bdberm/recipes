@@ -14,6 +14,10 @@ class RecipeIndex extends React.Component {
 
     return (
       <div className="index-wrapper">
+        <div className = 'index-header'>
+          <h1>Find Your Next Culinary Masterpiece</h1>
+          <p>Free Recipes, Guides and Tips For Easy, Delicious Cooking</p>
+        </div>
         <ul className="recipe-index">
           {recipes}
         </ul>
