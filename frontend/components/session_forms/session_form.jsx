@@ -18,6 +18,7 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    debugger
     if (newProps.currentUser) {
       this.props.removeModal();
     }
