@@ -22,12 +22,17 @@ User.create({email: 'pierre@nytimes.com', password:'starwars', name: 'Pierre Fra
 
 Recipe.destroy_all
 50.times do
-  Recipe.create({author_id: User.all.sample.id,
+  r = Recipe.new({author_id: User.all.sample.id,
     title: Faker::Food.dish,
     yield: "#{rand(8)+2} servings",
     time_minutes: rand(180),
     description: Faker::Hipster.paragraph(4)
     })
+
+  num = rand(13) + 1
+  filePath = "app/assets/images/#{num}.png";
+  r.image = File.open(filePath)
+  r.save!
 end
 
 Ingredient.destroy_all
