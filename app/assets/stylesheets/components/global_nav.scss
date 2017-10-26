@@ -10,21 +10,32 @@
 }
 
 .logo {
-
-  width: 20%;
+  width: 17%;
+  height: 65px;
+  background-image: image-url("logo-small.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-right: 1px solid #ccc;
 }
+
 
 .search-container {
   // background: orange;
   width: 68%;
   height:inherit;
-  border-left: 1px solid #ccc;
 }
 
 
-
-.global-nav > button {
+.top-right-buttons {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
   width: 10%;
+
+}
+
+.top-right-buttons button {
+  width: 100%;
   // margin-right: 8px;
   /*margin-top: 11px;*/
   border-left: 1px solid #ccc;
@@ -40,7 +51,9 @@
   display: none;
 }
 
-
+.top-right-buttons.loggedIn {
+  width: 20%;
+}
 
 .recipe-box-button.loggedIn {
   display: block;
