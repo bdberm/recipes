@@ -14,13 +14,32 @@
   margin: 0;
 }
 
-.receipe-index-info {
+.recipe-index-info {
   height: 44%;
   background: white;
+  padding-left: 12px;
 
 };
 
-.receipe-index-info h3, h4 {
+.recipe-index-info h3 {
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+
+}
+
+.recipe-index-info h4 {
+  padding-top: 4px;
+
+  font-size: 14px;
+  line-height: 1;
+}
+
+.recipe-index-info h5 {
+  color: #A9A9A9;
+  font-size: 13px;
+  padding-top: 40px;
 
 }
 
