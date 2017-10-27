@@ -10,11 +10,8 @@ end
 
 
 json.extract! @recipe, :id, :author_id, :title, :yield, :description
-json.minuteTime :time_minutes
+json.minuteTime @recipe.time_minutes
 json.authorName @recipe.author.name
 json.ingredients ingredients
 json.steps steps
-
-# json.author do
-#   json.partial! '/api/users/user', user: @recipe.author
-# end
+json.image_url asset_path(@recipe.image.url)
