@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.noScroll = this.noScroll.bind(this);
+    this.defaultSignIn = this.defaultSignIn.bind(this);
   }
 
   componentDidMount() {
@@ -52,8 +53,12 @@ class SessionForm extends React.Component {
     this.props.submitAction(user);
   }
 
-  handleClose() {
+  defaultSignIn(e) {
+    const defaultUser = {email: 'ben@gmail.com', password: 'starwars'};
+    this.props.submitAction(defaultUser);
+  }
 
+  handleClose() {
     this.props.removeModal();
     this.props.removeErrors();
     window.location.href = "/";
@@ -75,6 +80,10 @@ class SessionForm extends React.Component {
     const switchSentence = (this.props.formType === "Sign up")
     ? "Already have a Recipes account? " : "Don't have a Recipes account? ";
 
+    const defaultSignIn = this.props.formType === "Log in" ?
+    <button className = "default-sign-in" onClick={this.defaultSignIn}>
+      Log in with demo</button>
+    : <div></div>;
 
     return (
       <div className="session-form-container">
@@ -101,6 +110,7 @@ class SessionForm extends React.Component {
           <ul>
             {errors}
           </ul>
+          {defaultSignIn}
         </div>
       </div>
     );
