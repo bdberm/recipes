@@ -107,6 +107,10 @@
   padding: 0;
 }
 
+session-form-wrapper form input[type="submit"]:hover {
+  background-color: #99041c;
+}
+
 .session-link-button {
   font-weight: bold;
   color: #e33d26;

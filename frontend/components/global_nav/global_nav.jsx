@@ -17,9 +17,11 @@ const mapStateToProps = (state) => (
 const GlobalNav = ({loggedInClass}) => (
   <nav className="global-nav">
     <Link to="/" className="logo"></Link>
-    <div className = {`search-container${loggedInClass}`}>What Would You Like To Cook?</div>
+    <div className = {`search-container${loggedInClass}`}>
+      What Would You Like To Cook?</div>
     <ul className={`top-right-buttons${loggedInClass}`}>
-      <button className = {`recipe-box-button${loggedInClass}`}>Recipe Box</button>
+      <button className = {`recipe-box-button${loggedInClass}`}>
+        Recipe Box</button>
       <SessionButtonContainer />
     </ul>
   </nav>

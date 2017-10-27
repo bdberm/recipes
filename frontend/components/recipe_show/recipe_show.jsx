@@ -27,32 +27,44 @@ class RecipeShow extends React.Component {
 
     if (recipe.steps) {
       steps = recipe.steps.map((step, idx) => (
-        <li key={idx}>{step}</li>
+        <div key={idx}>
+          <li>Step {idx+1}</li>
+          <li>{step}</li>
+        </div>
       ));
     }
 
     return (
-      <section>
+      <section className = "recipe-show">
         <h1>{recipe.title}</h1>
         <div className="show-sub-header">
           <ul>
             <li>{recipe.authorName}</li>
-            <li>Yield {recipe.yield}</li>
-            <li>Time {convertMinutesToTimeString(recipe.minuteTime)}</li>
+              <ul>
+                <li><span>Yield:</span>  {recipe.yield}</li>
+                <li><span>Time:</span>  {convertMinutesToTimeString(recipe.minuteTime)}</li>
+              </ul>
           </ul>
-          <button>Save</button>
+          <button className="big-save-button">Save To Recipe Box</button>
         </div>
         <section className="recipe-description">
           <p>{recipe.description}</p>
           <img src={recipe.image_url} />
         </section>
         <section className="recipe-instructions">
-          <ul className = "ingredients">
-            {ingredients}
-          </ul>
-          <ul className = "steps">
-            {steps}
-          </ul>
+          <div className = "ingredients">
+            <h3>INGREDIENTS</h3>
+              <ul >
+                {ingredients}
+              </ul>
+          </div>
+          <div className = "steps">
+            <h3>PREPARATION</h3>
+              <ul >
+                {steps}
+              </ul>
+          </div>
+
         </section>
       </section>
     );
