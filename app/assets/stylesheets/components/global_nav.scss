@@ -3,26 +3,27 @@
   display: flex;
   // background:blue;
   justify-content: space-between;
-  align-items: center;
+
   border-bottom: 1px solid #ccc;
   // color: #7d131b;
   color: #e33d26;
 }
 
 .logo {
-  width: 17%;
-  height: 65px;
+  width: 20%;
+  // height: 65px;
   background-image: image-url("logo-small.png");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: auto;
   border-right: 1px solid #ccc;
 }
 
 
 .search-container {
-  // background: orange;
-  width: 68%;
-  height:inherit;
+
+  width: 58%;
+  height:65px;
 }
 
 
@@ -61,5 +62,5 @@
 }
 
 .search-container.loggedIn {
-  width: 59%
+  width: 49%
 }
