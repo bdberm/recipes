@@ -59,9 +59,13 @@ class SessionForm extends React.Component {
   }
 
   handleClose() {
+
     this.props.removeModal();
     this.props.removeErrors();
-    window.location.href = "/";
+    this.props.history.push("/");
+
+    
+
   }
 
 

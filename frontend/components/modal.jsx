@@ -1,15 +1,34 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {removeModal} from '../actions/ui_actions';
+import {withRouter} from 'react-router-dom';
 
 
-const Modal = ({visible, component: Component, classStr, remove }) => (
-  <div className={classStr}>
+const Modal = (props) => {
+  const {visible, component: Component, classStr, remove } = props;
+  return (<div className={classStr}>
     <div className="modal-content">
-      {visible ? <Component /> : null}
+      {visible ? <Component {...props} /> : null}
     </div>
-  </div>
-);
+  </div>);
+};
+
+// class Modal extends React.Component {
+//
+//   componentWillUnmount
+//
+//   render()  {
+//     const {visible, component: Component, classStr } = this.props;
+//
+//      return (
+//        <div className={classStr}>
+//          <div className="modal-content">
+//            {visible ? <Component /> : null}
+//          </div>
+//        </div>
+//      );
+//   }
+// }
 
 const mapStateToProps = (state) => {
   if (state.ui.modal.component) {
@@ -32,4 +51,4 @@ const mapDispatchToProps = (dispatch) => (
   }
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
