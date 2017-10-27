@@ -5,10 +5,6 @@ import LoginFormContainer from '../session_forms/login_form_container';
 class RecipeIndex extends React.Component {
 
   componentDidMount() {
-    if (this.props.location.search === "?protected=true"
-        && !this.props.loggedIn) {
-        this.props.recieveModal(LoginFormContainer);
-    }
     this.props.fetchRecipes();
   }
 

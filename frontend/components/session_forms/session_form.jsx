@@ -1,6 +1,7 @@
 import React from 'react';
 import merge from 'lodash/merge';
 import SessionLinkButtonContainer from './session_link_button_container';
+import {Redirect} from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
@@ -11,13 +12,16 @@ class SessionForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.noScroll = this.noScroll.bind(this);
   }
 
   componentDidMount() {
     this.props.removeErrors();
+    window.addEventListener('scroll', this.noScroll);
   }
 
   componentWillReceiveProps(newProps) {
+    window.addEventListener('scroll', this.noScroll);
 
     if (newProps.currentUser) {
       this.props.removeModal();
@@ -25,6 +29,14 @@ class SessionForm extends React.Component {
     if (newProps.formType !== this.props.formType) {
       this.props.removeErrors();
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.noScroll);
+  }
+
+  noScroll() {
+    window.scrollTo(0,0);
   }
 
   handleInput(stateKey) {
@@ -41,8 +53,10 @@ class SessionForm extends React.Component {
   }
 
   handleClose() {
+
     this.props.removeModal();
     this.props.removeErrors();
+    window.location.href = "/";
   }
 
 
