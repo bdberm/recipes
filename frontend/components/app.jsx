@@ -4,6 +4,7 @@ import GlobalNav from './global_nav/global_nav';
 import Modal from './modal';
 import MainPageIndexContainer from './recipe_index/main_page_index_container';
 import RecipeShowContainer from './recipe_show/recipe_show_container';
+import {ProtectedRoute} from '../util/routes_util';
 
 const App = () => (
   <div>
@@ -12,7 +13,7 @@ const App = () => (
       <GlobalNav />
     </header>
       <Route exact path="/" component={MainPageIndexContainer} />
-      <Route path="/recipes/:recipeId" component={RecipeShowContainer} />
+      <ProtectedRoute path="/recipes/:recipeId" component={RecipeShowContainer} />
 
 
   </div>
