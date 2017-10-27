@@ -16,14 +16,20 @@ class RecipeShow extends React.Component {
 
   render() {
     const {recipe} = this.props;
+    let ingredients = [];
+    let steps = [];
 
-    const ingredients = recipe.ingredients.map((ingredient, idx) => (
-      <li key={idx}>{ingredient}</li>
-    ));
+    if (recipe.ingredients) {
+       ingredients = recipe.ingredients.map((ingredient, idx) => (
+        <li key={idx}>{ingredient}</li>
+      ));
+    }
 
-    const steps = recipe.steps.map((step, idx) => (
-      <li key={idx}>{step}</li>
-    ));
+    if (recipe.steps) {
+      steps = recipe.steps.map((step, idx) => (
+        <li key={idx}>{step}</li>
+      ));
+    }
 
     return (
       <section>
