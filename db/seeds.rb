@@ -55,7 +55,7 @@ end
 
 RecipeSave.destroy_all
 i = 0
-while i < 50
+while i < 100
   begin
     RecipeSave.create({user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id})
     i += 1
