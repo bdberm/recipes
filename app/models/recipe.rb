@@ -13,5 +13,16 @@ class Recipe < ApplicationRecord
   has_many :ingredients, dependent: :destroy
   has_many :steps, dependent: :destroy
 
+  has_many :recipe_saves,
+    class_name: 'RecipeSave',
+    foreign_key: :recipe_id,
+    primary_key: :id
+
+  has_many :users_who_have_saved,
+    through: :recipe_saves,
+    source: :user
+
+
+
 
 end

@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:saved_recipes).find(params[:id])
     render :show
   end
 

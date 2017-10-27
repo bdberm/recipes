@@ -24,6 +24,15 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     primary_key: :id
 
+  has_many :recipe_saves,
+    class_name: 'RecipeSave',
+    foreign_key: :user_id,
+    primary_key: :id
+
+  has_many :saved_recipes,
+    through: :recipe_saves,
+    source: :recipe
+
   attr_reader :password
 
   def self.generate_session_token
