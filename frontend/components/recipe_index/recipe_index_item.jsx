@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {convertMinutesToTimeString} from '../../util/time_converter';
+import RecipeIndexItemSaveContainer from './recipe_index_item_save_container';
+
 
 const RecipeIndexItem = ({recipe}) => (
   <Link to={`/recipes/${recipe.id}`}>
@@ -11,7 +13,8 @@ const RecipeIndexItem = ({recipe}) => (
       <h4>By {recipe.authorName}</h4>
       <h5>{convertMinutesToTimeString(recipe.minuteTime)}</h5>
     </div>
-    <button className="save-from-index"></button>
+    <RecipeIndexItemSaveContainer recipe={recipe} />
+    
   </div>
   </Link>
 );
