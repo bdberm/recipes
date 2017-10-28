@@ -5,7 +5,7 @@
 @import "general.scss";
 
 //Modal
-@import "components/modal.scss";
+@import "components/session_modal.scss";
 
 //Global Nav
 
@@ -14,3 +14,5 @@
 @import "components/recipe_index.scss";
 
 @import "components/recipe_show.scss";
+
+@import "components/unsave_modal.scss";

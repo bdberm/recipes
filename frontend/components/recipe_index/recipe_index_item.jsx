@@ -13,7 +13,7 @@ const RecipeIndexItem = ({recipe}) => (
       <h4>By {recipe.authorName}</h4>
       <h5>{convertMinutesToTimeString(recipe.minuteTime)}</h5>
     </div>
-    <RecipeIndexItemSaveContainer recipeId={recipe.id} />
+    <RecipeIndexItemSaveContainer recipe={recipe} />
 
   </div>
   </Link>

@@ -17,16 +17,7 @@ const mapDispatchToProps = (dispatch) => (
     launchLoginForm: (() => dispatch(receiveModal(LoginFormContainer))),
   }
 );
-//
-// const Protected = ({component: Component, path, loggedIn}) => (
-//   <Route path={path} render={(props) => (
-//     loggedIn ? (
-//       <Component {...props} />
-//     ) : (
-//       <Redirect to="/" />
-//     )
-//   )}/>
-// );
+
 
 class ProtectedComponent extends React.Component {
 

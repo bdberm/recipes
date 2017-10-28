@@ -9,15 +9,15 @@ class RecipeIndexItemSave extends React.Component {
   handleClick(e) {
     e.preventDefault();
 
-    const {recipeId, recipeSaved, launchLogin,
-      saveRecipe, unsaveRecipe} = this.props;
+    const {recipe, recipeSaved, launchLogin, launchUnsaveModal,
+      saveRecipe} = this.props;
 
     if (recipeSaved === "No User") {
       launchLogin();
     } else if (recipeSaved === true) {
-      unsaveRecipe(recipeId);
+      launchUnsaveModal(recipe);
     } else {
-      saveRecipe(recipeId);
+      saveRecipe(recipe.id);
     }
   }
 

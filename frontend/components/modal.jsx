@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 
 
 const Modal = (props) => {
+  
   const {visible, component: Component, classStr, remove } = props;
   return (<div className={classStr}>
     <div className="modal-content">
@@ -13,22 +14,7 @@ const Modal = (props) => {
   </div>);
 };
 
-// class Modal extends React.Component {
-//
-//   componentWillUnmount
-//
-//   render()  {
-//     const {visible, component: Component, classStr } = this.props;
-//
-//      return (
-//        <div className={classStr}>
-//          <div className="modal-content">
-//            {visible ? <Component /> : null}
-//          </div>
-//        </div>
-//      );
-//   }
-// }
+
 
 const mapStateToProps = (state) => {
   if (state.ui.modal.component) {
