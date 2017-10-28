@@ -4,10 +4,10 @@ import {fetchRecipe} from '../../actions/recipe_actions';
 import RecipeShow from './recipe_show';
 
 const mapStateToProps = (state, ownProps) => {
-  
+
   const stateRec = state.entities.recipes[ownProps.match.params.recipeId];
   const recipe = stateRec || {title:"", yield: "", minutTime:"", authorName:"",
-  ingredients:[], steps:[] };
+  ingredients:[], steps:[], id:"" };
   return {
     recipe,
   };

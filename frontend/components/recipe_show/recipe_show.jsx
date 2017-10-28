@@ -1,5 +1,6 @@
 import React from 'react';
 import {convertMinutesToTimeString} from '../../util/time_converter';
+import RecipeSaveButtonContainer from './recipe_save_button_container';
 
 class RecipeShow extends React.Component {
 
@@ -45,7 +46,7 @@ class RecipeShow extends React.Component {
                 <li><span>Time:</span>  {convertMinutesToTimeString(recipe.minuteTime)}</li>
               </ul>
           </ul>
-          <button className="big-save-button">Save To Recipe Box</button>
+          <RecipeSaveButtonContainer recipeId={recipe.id} />
         </div>
         <section className="recipe-description">
           <p>{recipe.description}</p>

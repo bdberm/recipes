@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     if (!state.session.currentUser) {
       classStr = "save-from-index";
     }
-    else if (state.session.currentUser.savedRecipeIds.includes(ownProps.recipe.id)) {
+    else if (state.session.currentUser.savedRecipeIds.includes(ownProps.recipeId)) {
       classStr = "save-from-index saved";
     } else {
       classStr = "save-from-index";

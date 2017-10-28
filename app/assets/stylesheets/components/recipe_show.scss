@@ -57,14 +57,33 @@
   background-color: #e33d26;
   width: 170px;
   color: white;
-  text-align: center;
+  font-size: 15px;
+  // text-align: center;
+  box-sizing: border-box;
+  padding-left: 35px;
   font-weight: bold;
   border-radius: 5px;
   height: 35px;
+  position: relative;
 }
 
 .big-save-button:hover {
   background-color: #99041c;
+}
+
+.big-save-button > div {
+  background-image: image-url("save-ribbon-white-outline.png");
+  width: 25px;
+  height: 33.33px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 5px;
+  left: 4px;
+}
+
+.big-save-button.saved > div {
+  background-image: image-url("save-ribbon-filled-white.png");
 }
 
 .recipe-description {
