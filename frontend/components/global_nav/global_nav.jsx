@@ -20,8 +20,11 @@ const GlobalNav = ({loggedInClass}) => (
     <div className = {`search-container${loggedInClass}`}>
       What Would You Like To Cook?</div>
     <ul className={`top-right-buttons${loggedInClass}`}>
-      <Link to="/recipe-box"><button className = {`recipe-box-button${loggedInClass}`}>
-        Recipe Box</button></Link>
+    <button className = {`recipe-box-button${loggedInClass}`}>
+        <Link to="/recipe-box">
+          <div>Recipe Box</div>
+        </Link>
+    </button>
       <SessionButtonContainer />
     </ul>
   </nav>
