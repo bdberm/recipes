@@ -13,7 +13,7 @@ class RecipeIndex extends React.Component {
     const recipes = this.props.recipes.map((recipe, idx) => {
       return <RecipeIndexItem key={idx} recipe={recipe} />;
     });
-
+    
     return (
       <div className="index-wrapper">
         <div className = 'index-header'>
