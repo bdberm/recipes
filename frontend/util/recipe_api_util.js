@@ -11,3 +11,17 @@ export const fetchRecipe = (recipeId) => (
     url: `api/recipes/${recipeId}`,
   })
 );
+
+export const saveRecipe = (recipeId) => (
+  $.ajax({
+    method: 'post',
+    url: `api/recipes/${recipeId}/save`,
+  })
+);
+
+export const unsaveRecipe = (recipeId) => (
+  $.ajax({
+    method: 'delete',
+    url: `api/recipes/${recipeId}/unsave`,
+  })
+);
