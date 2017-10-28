@@ -13,9 +13,11 @@ const App = () => (
     <header>
       <GlobalNav />
     </header>
+    <main>
       <Route exact path="/" component={MainPageIndexContainer} />
       <ProtectedRoute path="/recipes/:recipeId" component={RecipeShowContainer} />
       <ProtectedRoute path="/recipe-box" component={RecipeBox} />
+    </main>
   </div>
 );
 

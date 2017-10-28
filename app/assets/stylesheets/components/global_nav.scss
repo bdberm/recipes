@@ -7,6 +7,7 @@
   border-bottom: 1px solid #ccc;
   // color: #7d131b;
   color: #e33d26;
+  
 }
 
 .logo {
@@ -47,6 +48,13 @@
   color: #e33d26;
   font-weight:bold;
   background: white;
+}
+.top-right-buttons button > a {
+  display: block;
+  margin: auto auto;
+  padding-top:24px;
+  width: 100%;
+  height: 100%;
 }
 
 .recipe-box-button {

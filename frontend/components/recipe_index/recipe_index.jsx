@@ -10,15 +10,27 @@ class RecipeIndex extends React.Component {
 
 
   render() {
+
     const recipes = this.props.recipes.map((recipe, idx) => {
       return <RecipeIndexItem key={idx} recipe={recipe} />;
     });
-    
+
+    let headerText = "";
+    let subheaderText = "";
+    if (this.props.match.path === "/") {
+      headerText = "Find Your Next Culinary Masterpiece";
+      subheaderText = "Free Recipes, Guides and Tips For Easy, Delicious Cooking";
+    }
+    else if (this.props.match.path === "/recipe-box") {
+      headerText = "Your Saved Recipes";
+      subheaderText = "";
+    }
+
     return (
       <div className="index-wrapper">
         <div className = 'index-header'>
-          <h1>Find Your Next Culinary Masterpiece</h1>
-          <p>Free Recipes, Guides and Tips For Easy, Delicious Cooking</p>
+          <h1>{headerText}</h1>
+          <p>{subheaderText}</p>
         </div>
         <ul className="recipe-index">
           {recipes}
