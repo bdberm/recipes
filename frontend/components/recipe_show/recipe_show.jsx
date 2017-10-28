@@ -6,7 +6,7 @@ class RecipeShow extends React.Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
-}
+  }
 
   componentDidMount() {
     this.props.fetchRecipe(this.props.match.params.recipeId);
