@@ -1,6 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import RecipeSaveButton from './recipe_save_button';
+import {saveRecipe} from '../../actions/recipe_actions';
+import {receiveModalWithRecipe} from '../../actions/ui_actions';
+import UnsaveModalContainer from '../unsave_modal/unsave_modal_container';
 
 const mapStateToProps = (state, ownProps) => {
     let classStr;
@@ -9,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
       classStr = "big-save-button";
       buttonStr = "Save To Recipe Box";
     }
-    else if (state.session.currentUser.savedRecipeIds.includes(ownProps.recipeId)) {
+    else if (state.session.currentUser.savedRecipeIds.includes(ownProps.recipe.id)) {
       classStr = "big-save-button saved";
       buttonStr = "Saved";
     } else {
@@ -19,6 +22,13 @@ const mapStateToProps = (state, ownProps) => {
     return {classStr, buttonStr};
 };
 
+const mapDispatchToProps = (dispatch, ownProps) => (
+  {
+    saveRecipe: ((recipeId) => dispatch(saveRecipe(recipeId))),
+    launchUnsaveModal: ((recipe) =>
+      dispatch(receiveModalWithRecipe(UnsaveModalContainer, recipe))),
+  }
+);
 
 
-export default connect(mapStateToProps, null)(RecipeSaveButton);
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeSaveButton);

@@ -4,6 +4,10 @@ import RecipeSaveButtonContainer from './recipe_save_button_container';
 
 class RecipeShow extends React.Component {
 
+  componentWillMount() {
+    window.scrollTo(0, 0);
+}
+
   componentDidMount() {
     this.props.fetchRecipe(this.props.match.params.recipeId);
   }
@@ -46,7 +50,7 @@ class RecipeShow extends React.Component {
                 <li><span>Time:</span>  {convertMinutesToTimeString(recipe.minuteTime)}</li>
               </ul>
           </ul>
-          <RecipeSaveButtonContainer recipeId={recipe.id} />
+          <RecipeSaveButtonContainer recipe={recipe} />
         </div>
         <section className="recipe-description">
           <p>{recipe.description}</p>

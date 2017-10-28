@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import RecipeIndexItemSave from './recipe_index_item_save';
-import {saveRecipe, unsaveRecipe} from '../../actions/recipe_actions';
+import {saveRecipe} from '../../actions/recipe_actions';
 import {receiveModal, receiveModalWithRecipe} from '../../actions/ui_actions';
 import LoginFormContainer from '../session_forms/login_form_container';
 import UnsaveModalContainer from '../unsave_modal/unsave_modal_container';
