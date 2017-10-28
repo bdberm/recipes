@@ -46,3 +46,9 @@
   background-color: #e33d26;
   color: white;
 }
+
+@media screen and (max-width: 750px) {
+  .unsave-modal {
+    width: 97%;
+  }
+}
