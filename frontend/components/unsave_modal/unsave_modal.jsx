@@ -23,6 +23,8 @@ class UnSaveModal extends React.Component {
           <button onClick={removeModal}>No</button>
           <button onClick={this.handleUnsave}>Yes</button>
         </div>
+        <span className="modal-close" onClick={this.props.removeModal}>
+          &times;</span>
       </div>
     );
   }

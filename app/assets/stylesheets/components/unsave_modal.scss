@@ -1,10 +1,48 @@
 .unsave-modal {
   width: 450px;
-  height: 180px;
+  height: 195px;
   background: white;
   position: absolute;
   top: 45px;
   left: 0;
   right: 0;
   margin:0 auto;
+}
+
+.unsave-modal > h3 {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 35px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.unsave-modal > h3 > span {
+  font-weight: bold;
+
+}
+
+.unsave-modal-buttons {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 35px;
+  font-size: 18px;
+}
+
+.unsave-modal-buttons > button {
+  width: 45%;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.unsave-modal-buttons > button:first-of-type {
+  border: 1px solid black;
+}
+
+.unsave-modal-buttons > button:last-of-type {
+  background-color: #e33d26;
+  color: white;
 }
