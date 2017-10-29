@@ -22,6 +22,8 @@ class Recipe < ApplicationRecord
     through: :recipe_saves,
     source: :user
 
+    had_many :comments
+
 
 
 

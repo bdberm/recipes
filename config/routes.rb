@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :recipes, only: [:index, :show] do
       post 'save'
       delete 'unsave'
+      resources :comments, only: [:create]
     end
+    resources :comments, only: [:update, :destroy]
   end
 end

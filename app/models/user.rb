@@ -33,6 +33,8 @@ class User < ApplicationRecord
     through: :recipe_saves,
     source: :recipe
 
+  has_many :comments  
+
   attr_reader :password
 
   def self.generate_session_token
