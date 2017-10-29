@@ -9,7 +9,7 @@ const RecipesReducer = (oldState = _defaultState, action) => {
     case RECEIVE_RECIPES:
       return merge({}, oldState, action.recipes);
     case RECEIVE_RECIPE:
-      return merge({}, oldState, {[action.recipe.id]: action.recipe});
+      return merge({}, oldState, {[action.payload.recipe.id]: action.payload.recipe});
     default:
       return oldState;
   }

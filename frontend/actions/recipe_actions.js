@@ -12,10 +12,10 @@ const receiveRecipes = (recipes) => (
   }
 );
 
-const receiveRecipe = (recipe) => (
+const receiveRecipe = (payload) => (
   {
     type: RECEIVE_RECIPE,
-    recipe
+    payload
   }
 );
 
@@ -36,7 +36,7 @@ export const fetchRecipes = () => (dispatch) => (
 
 export const fetchRecipe = (recipeId) => (dispatch) => (
   RecipeAPIUtil.fetchRecipe(recipeId).then(
-    ((recipe) => dispatch(receiveRecipe(recipe)))
+    ((response) => dispatch(receiveRecipe(response)))
   )
 );
 

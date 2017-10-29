@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  validates :author_id, :title, :yield, :time_minutes, presence: true
+  validates :author, :title, :yield, :time_minutes, presence: true
 
   has_attached_file :image, default_url: "13.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
@@ -22,7 +22,7 @@ class Recipe < ApplicationRecord
     through: :recipe_saves,
     source: :user
 
-    had_many :comments
+  has_many :comments
 
 
 

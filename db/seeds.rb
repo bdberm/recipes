@@ -63,3 +63,15 @@ while i < 100
   end
 
 end
+
+Comment.destroy_all
+300.times do
+  u = User.all.sample
+
+  Comment.create!({user_id: u.id,
+    recipe_id: Recipe.all.sample.id,
+    comment_name: u.name,
+    body: Faker::Lovecraft.paragraph(3)
+  })
+
+end
