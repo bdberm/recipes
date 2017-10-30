@@ -3,6 +3,7 @@ import * as CommentAPIUtil from '../util/comment_api_util';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
+export const REMOVE_COMMENT_ERRORS = 'REMOVE_COMMENT_ERRORS';
 
 const receiveComment = (payload) => (
   {
@@ -23,6 +24,12 @@ const receiveCommentErrors = (errors) => (
   {
     type: RECEIVE_COMMENT_ERRORS,
     errors
+  }
+);
+
+const removeCommentErrors = () => (
+  {
+    type: REMOVE_COMMENT_ERRORS  
   }
 );
 

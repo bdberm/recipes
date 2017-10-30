@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {createComment, deleteComment} from './util/comment_api_util';
+import {createComment, deleteComment} from './actions/comment_actions';
 
 
 
