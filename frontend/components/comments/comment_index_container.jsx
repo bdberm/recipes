@@ -13,6 +13,20 @@ const mapStateToProps = (state, ownProps) => {
     });
   }
 
+  comments.sort((comment1, comment2) => {
+
+    const time1 = new Date(comment1.created_at);
+    const time2 = new Date(comment2.created_at);
+    
+    if (time1 < time2) {
+      return 1;
+    } else if (time1 > time2) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+
   if (state.session.currentUser) {
     currentUser = state.session.currentUser;
   }
