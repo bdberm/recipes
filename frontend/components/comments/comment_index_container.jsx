@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {deleteComment} from '../../actions/comment_actions';
 import CommentIndex from './comment_index';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,7 +14,14 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     comments,
+    currentUser: state.session.currentUser
   };
 };
 
-export default connect(mapStateToProps, null)(CommentIndex);
+const mapDispatchToProps = (dispatch) => (
+  {
+    deleteComment: ((commentId) => dispatch(deleteComment(commentId))),
+  }
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentIndex);
