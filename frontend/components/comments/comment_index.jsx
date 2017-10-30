@@ -9,12 +9,13 @@ class CommentIndex extends React.Component {
       return <Comment key={idx} comment={comment} />;
     });
 
-
-
     return (
-      <ul>
-        {comments}
-      </ul>
+      <div className="comments-index">
+        <h3>Cooking Notes</h3>
+        <ul>
+          {comments}
+        </ul>
+      </div>
     );
   }
 

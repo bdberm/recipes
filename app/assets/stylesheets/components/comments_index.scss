@@ -1,0 +1,43 @@
+.comments-index {
+  width: 66%;
+  margin-left: 33%;
+}
+
+.comments-index > h3 {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 25px 0;
+}
+
+.comment:last-of-type {
+  padding-bottom: 50px;
+}
+
+.comment > h3 {
+  font-weight: bold;
+  padding-right: 12px;
+  border-right: 1px solid #ccc;
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.comment > p {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 800px) {
+  .comments-index {
+    width: 100%;
+    margin: 0 0;
+  }
+}

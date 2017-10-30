@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {saveRecipe, unsaveRecipe} from './actions/recipe_actions';
+import {createComment, deleteComment} from './util/comment_api_util';
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
-  window.saveRecipe = saveRecipe;
-  window.unsaveRecipe = unsaveRecipe;
+  window.createComment = createComment;
+  window.deleteComment = deleteComment;
 
 
   const root = document.getElementById('root');
