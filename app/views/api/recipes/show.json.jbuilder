@@ -20,7 +20,7 @@ json.recipe do
 end
 
 json.comments do
-  @recipe.comments.each do |comment|
+  @recipe.comments.order('comments.created_at desc').each do |comment|
     json.set! comment.id do
       json.partial! '/api/comments/comment', comment: comment
     end

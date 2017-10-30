@@ -3,6 +3,7 @@ import SessionButton from './session_button';
 import {logout} from '../../actions/session_actions';
 import {receiveModal} from '../../actions/ui_actions';
 import LoginFormContainer from '../session_forms/login_form_container';
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state) => {
   let buttonType;
@@ -27,4 +28,4 @@ const mapDispatchToProps = (dispatch) => (
 
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionButton);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionButton));

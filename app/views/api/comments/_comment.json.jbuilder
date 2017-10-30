@@ -4,5 +4,5 @@ else
   pid = false
 end
 
-json.extract! comment, :id, :recipe_id, :user_id, :comment_name, :body
+json.extract! comment, :id, :recipe_id, :user_id, :comment_name, :body, :created_at
 json.parent_id pid

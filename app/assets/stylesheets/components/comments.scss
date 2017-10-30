@@ -35,6 +35,13 @@
   font-size: 14px;
 }
 
+.comment-header > h3:last-of-type {
+  padding-left: 12px;
+  border: none;
+  font-weight: normal;
+  color: #777;
+}
+
 .comment-header > button {
   padding-left: 12px;
   font-size: 14px;

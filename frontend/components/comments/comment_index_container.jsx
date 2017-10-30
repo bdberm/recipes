@@ -6,15 +6,20 @@ import CommentIndex from './comment_index';
 const mapStateToProps = (state, ownProps) => {
 
   let comments = [];
+  let currentUser = {commentIds:[]};
   if (state.entities.comments && ownProps.commentIds)  {
     comments = Object.values(state.entities.comments).filter((comment) => {
       return ownProps.commentIds.includes(comment.id);
     });
   }
 
+  if (state.session.currentUser) {
+    currentUser = state.session.currentUser;
+  }
+
   return {
     comments,
-    currentUser: state.session.currentUser
+    currentUser
   };
 };
 
