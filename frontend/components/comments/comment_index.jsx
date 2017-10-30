@@ -11,7 +11,6 @@ class CommentIndex extends React.Component {
 
     return (
       <div className="comments-index">
-        <h3>Cooking Notes</h3>
         <ul>
           {comments}
         </ul>

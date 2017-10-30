@@ -1,0 +1,16 @@
+.comment-form {
+  width:100%;
+  background-color: #F5F5F5;
+  border: 1px solid #ccc;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form > input {
+  border: 1px solid #ccc;
+}
+
+.comment-form > textarea {
+  border: 1px solid #ccc;
+}

@@ -27,9 +27,9 @@ const receiveCommentErrors = (errors) => (
   }
 );
 
-const removeCommentErrors = () => (
+export const removeCommentErrors = () => (
   {
-    type: REMOVE_COMMENT_ERRORS  
+    type: REMOVE_COMMENT_ERRORS
   }
 );
 

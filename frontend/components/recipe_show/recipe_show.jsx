@@ -2,6 +2,7 @@ import React from 'react';
 import {convertMinutesToTimeString} from '../../util/time_converter';
 import RecipeSaveButtonContainer from './recipe_save_button_container';
 import CommentIndexContainer from '../comments/comment_index_container';
+import CreateCommentContainer from '../comments/create_comment_container';
 
 class RecipeShow extends React.Component {
 
@@ -71,7 +72,11 @@ class RecipeShow extends React.Component {
               </ul>
           </div>
         </section>
-        <CommentIndexContainer commentIds={recipe.commentIds}/>
+        <section className="comments-container">
+          <h3>Cooking Notes</h3>
+          <CreateCommentContainer recipeId={recipe.id} />
+          <CommentIndexContainer commentIds={recipe.commentIds}/>
+        </section>
       </section>
     );
   }
