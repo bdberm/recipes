@@ -9,8 +9,45 @@
 
 .comment-form > input {
   border: 1px solid #ccc;
+  background-color: white;
+  margin: 0 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  padding-left: 15px;
+  line-height: 3;
 }
 
 .comment-form > textarea {
   border: 1px solid #ccc;
+  background-color: white;
+  margin: 0 20px;
+  margin-top: 30px;
+  font-size: 14px;
+  padding-left: 15px;
+  line-height: 1.5;
+  height: 200px;
+  padding-top: 15px;
+}
+
+.comment-form > div {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 25px 20px;
+  margin-bottom: 20px;
+}
+.comment-form > div> button {
+  width: 85px;
+  text-align: center;
+
+  font-size: 16px;
+  color: #e33d26;
+}
+
+.comment-form > ul {
+  width: 85%;
+  color: #e33d26;
+  margin: 0 20px;
+  margin-bottom: 10px;
+  list-style: none;
+  box-sizing: border-box;
 }

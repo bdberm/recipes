@@ -9,10 +9,15 @@ class CommentForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(
-      this.props.removeErrors()
+    window.promise = this.props.action(this.state).then(
+      (() => {
+        this.props.removeErrors();
+        this.setState({body:""});
+      })
     );
 
   }
@@ -35,7 +40,7 @@ class CommentForm extends React.Component {
         <input onChange={this.handleInput("comment_name")} type="text"
            value ={this.state.comment_name}></input>
         <textarea value={this.state.body} onChange={this.handleInput("body")} />
-        <button onClick={this.handleSubmit}>Add Note</button>
+        <div><button onClick={this.handleSubmit}>Add Note</button></div>
         <ul>
           {errors}
         </ul>

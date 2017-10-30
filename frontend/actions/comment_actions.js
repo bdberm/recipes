@@ -36,14 +36,15 @@ export const removeCommentErrors = () => (
 
 export const createComment = (comment, recipeId) => (dispatch) => (
   CommentAPIUtil.createComment(comment, recipeId).then(
-    ((response) => dispatch(receiveComment(response))),
+    ((response) => dispatch(receiveComment(response)))).fail(
+
     ((errors) => dispatch(receiveCommentErrors(errors)))
   )
 );
 
 export const deleteComment = (commentId) => (dispatch) => (
   CommentAPIUtil.deleteComment(commentId).then(
-    ((response) => dispatch(removeComment(response))),
+    ((response) => dispatch(removeComment(response)))).fail(
     ((errors) => dispatch(receiveCommentErrors(errors)))
   )
 );
