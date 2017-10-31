@@ -11,17 +11,20 @@ class RecipeShow extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.fetchRecipe(this.props.match.params.recipeId);
   }
 
   componentWillReceiveProps(newProps) {
     const newId = newProps.match.params.recipeId;
-    if (newId !== newId) {
+    debugger
+    if (newId !== this.props.match.params.recipeId) {
       this.props.fetchRecipe(newId);
     }
   }
 
   render() {
+
     const {recipe} = this.props;
     let ingredients = [];
     let steps = [];
