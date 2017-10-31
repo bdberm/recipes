@@ -1,0 +1,52 @@
+.feature-container {
+  width: 100%;
+  position: relative;
+  max-height: 530px;
+  overflow: hidden;
+}
+
+.feature-info {
+  width: 320px;
+  height: 280px;
+  background: white;
+  position: absolute;
+  right: 85px;
+  bottom: 75px;
+}
+
+.feature-label {
+  position: absolute;
+  bottom: 295px;
+  right: 30px;
+  width: 110px;
+  height: 110px;
+  background-color: #e33d26;
+  border-radius: 55px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1.1px;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+
+.feature-info h2, h3 {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.feature-info > h2 {
+  font-size: 34px;
+  padding: 0 60px;
+  margin-top: 70px;
+  margin-bottom: 45px;
+}
+
+.feature-info > h3 {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

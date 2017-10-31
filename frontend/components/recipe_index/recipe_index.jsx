@@ -1,6 +1,7 @@
 import React from 'react';
 import RecipeIndexItem from './recipe_index_item';
 import LoginFormContainer from '../session_forms/login_form_container';
+import FeatureContainer from '../feature/feature_container';
 
 class RecipeIndex extends React.Component {
 
@@ -10,16 +11,19 @@ class RecipeIndex extends React.Component {
 
 
   render() {
-    
+
     const recipes = this.props.recipes.map((recipe, idx) => {
       return <RecipeIndexItem key={idx} recipe={recipe} />;
     });
 
     let headerText = "";
     let subheaderText = "";
+    let feature = <div></div>;
     if (this.props.match.path === "/") {
       headerText = "Find Your Next Culinary Masterpiece";
       subheaderText = "Free Recipes, Guides and Tips For Easy, Delicious Cooking";
+
+      feature = <FeatureContainer classStr="feature-container" recipe={this.props.feature} />;
     }
     else if (this.props.match.path === "/recipe-box") {
       headerText = "Your Saved Recipes";
@@ -31,6 +35,7 @@ class RecipeIndex extends React.Component {
 
     return (
       <div className="index-wrapper">
+        {feature}
         <div className = 'index-header'>
           <h1>{headerText}</h1>
           <p>{subheaderText}</p>

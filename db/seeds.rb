@@ -21,6 +21,14 @@ User.create({email: 'florence@nytimes.com', password:'starwars', name: 'Florence
 User.create({email: 'pierre@nytimes.com', password:'starwars', name: 'Pierre Franey'})
 
 Recipe.destroy_all
+feature = Recipe.new({title: 'Dill-Roasted Potatoes', yield: '4 servings', time_minutes: 90,
+  description: "Tangy dill elevates these roast potatoes beyond the ordinary. Enjoy with a simple steak and a glass of good red wine",
+  author_id: User.first.id, featured: true
+  })
+
+feature.image = File.open("app/assets/images/feature.png")
+feature.save
+
 50.times do
   r = Recipe.new({author_id: User.all.sample.id,
     title: Faker::Food.dish,
