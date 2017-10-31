@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-
+import {searchRecipes} from './util/search_util.js';
 
 
 
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
-
+  window.searchRecipes = searchRecipes;
 
 
   const root = document.getElementById('root');
