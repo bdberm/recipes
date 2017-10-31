@@ -1,12 +1,5 @@
 import React from 'react';
-
-// const Feature = ({recipe, classStr}) => (
-//   <section className={classStr}>
-//     <img src={recipe.image_url} />
-//     <div className="feature-info"></div>
-//
-//   </section >
-// );
+import RecipeIndexItemSaveContainer from '../recipe_index/recipe_index_item_save_container';
 
 class Feature extends React.Component {
   constructor(props) {
@@ -37,6 +30,7 @@ class Feature extends React.Component {
            <h3>{author}</h3>
          </div>
          <div className="feature-label">RECIPE <br/> OF THE DAY</div>
+         <RecipeIndexItemSaveContainer recipe={recipe} classStart="save-from-feature" />
        </section >
      );
   }

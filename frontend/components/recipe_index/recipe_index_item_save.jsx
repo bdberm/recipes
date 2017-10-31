@@ -8,7 +8,7 @@ class RecipeIndexItemSave extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-
+    e.stopPropagation();
     const {recipe, recipeSaved, launchLogin, launchUnsaveModal,
       saveRecipe} = this.props;
 
@@ -22,10 +22,10 @@ class RecipeIndexItemSave extends React.Component {
   }
 
   render () {
-
+    const klass = this.props.classStart + " " + this.props.classStr;
     return(
       <button onClick={this.handleClick}
-        className={this.props.classStr}></button>
+        className={klass}></button>
     );
   }
 

@@ -50,3 +50,23 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+.save-from-feature {
+  width: 170px;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding-left: 35px;
+  font-weight: bold;
+  border-radius: 5px;
+  height: 35px;
+  border: 1px solid #ccc;
+  background: black;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+}
+
+.save-from-feature:hover {
+  background-color: #e33d26;
+}

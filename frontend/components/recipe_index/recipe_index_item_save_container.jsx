@@ -10,14 +10,14 @@ const mapStateToProps = (state, ownProps) => {
     let classStr;
     let recipeSaved;
     if (!state.session.currentUser) {
-      classStr = "save-from-index";
+      classStr = "";
       recipeSaved = "No User";
     }
     else if (state.session.currentUser.savedRecipeIds.includes(ownProps.recipe.id)) {
-      classStr = "save-from-index saved";
+      classStr = "saved";
       recipeSaved = true;
     } else {
-      classStr = "save-from-index";
+      classStr = "";
       recipeSaved = false;
     }
     return {classStr, recipeSaved};
