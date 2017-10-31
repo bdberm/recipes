@@ -10,7 +10,7 @@ class RecipeIndex extends React.Component {
 
 
   render() {
-
+    
     const recipes = this.props.recipes.map((recipe, idx) => {
       return <RecipeIndexItem key={idx} recipe={recipe} />;
     });
@@ -23,6 +23,9 @@ class RecipeIndex extends React.Component {
     }
     else if (this.props.match.path === "/recipe-box") {
       headerText = "Your Saved Recipes";
+      subheaderText = "";
+    } else if (this.props.match.path === "/search/:searchQuery") {
+      headerText = `${this.props.recipes.length} results for ${this.props.match.params.searchQuery}`;
       subheaderText = "";
     }
 
