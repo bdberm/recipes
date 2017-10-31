@@ -18,7 +18,7 @@ class Feature extends React.Component {
 
 
   render() {
-    const {recipe, classStr} = this.props;
+    const {recipe, classStr, saved} = this.props;
     const author = (this.props.recipe.authorName)
       ? `${this.props.recipe.authorName}` : '';
 
@@ -30,7 +30,7 @@ class Feature extends React.Component {
            <h3>{author}</h3>
          </div>
          <div className="feature-label">RECIPE <br/> OF THE DAY</div>
-         <RecipeIndexItemSaveContainer recipe={recipe} classStart="save-from-feature" />
+         <RecipeIndexItemSaveContainer saved={saved} recipe={recipe} classStart="save-from-feature" />
        </section >
      );
   }

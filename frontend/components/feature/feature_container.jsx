@@ -4,6 +4,18 @@ import {fetchRecipe} from '../../actions/recipe_actions';
 import Feature from './feature';
 import {withRouter} from 'react-router-dom';
 
+const mapStateToProps = (state, ownProps) => {
+  let saved = false;
+  if (state.session.currentUser) {
+    if (state.session.currentUser.savedRecipeIds.includes(ownProps.recipe.id)) {
+      saved = true;
+    }
+  }
+
+  return {
+    saved
+  };
+};
 
 const mapDispatchToProps = (dispatch) => (
   {
@@ -11,4 +23,4 @@ const mapDispatchToProps = (dispatch) => (
   }
 );
 
-export default withRouter(connect(null, mapDispatchToProps)(Feature));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Feature));

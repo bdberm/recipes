@@ -70,3 +70,55 @@
 .save-from-feature:hover {
   background-color: #e33d26;
 }
+
+.save-from-feature > div {
+  background-image: image-url("save-ribbon-white-outline.png");
+  width: 25px;
+  height: 33.33px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 5px;
+  left: 4px;
+}
+
+.save-from-feature.saved > div {
+  background-image: image-url("save-ribbon-filled-white.png");
+}
+
+@media screen and (max-width: 750px) {
+  .feature-label {
+
+    width: 135px;
+    height: 20px;
+    padding:0;
+    padding-top: 3px;
+    font-size: 10px;
+    bottom: 140px;
+    left: 0;
+    right:0;
+    margin: 0 auto;
+    z-index: 10;
+
+  }
+  .feature-label > br {
+    display: none;
+
+  }
+  .feature-info {
+
+    width: 100%;
+    left:0;
+    bottom: 0;
+    height: 150px;
+
+  }
+
+  .feature-info > h2 {
+    margin-top: 32px;
+    margin-bottom: 35px;
+  }
+  .save-from-feature {
+    bottom: 155px;
+  }
+}

@@ -22,10 +22,18 @@ class RecipeIndexItemSave extends React.Component {
   }
 
   render () {
+    let buttonText = "";
+    if(this.props.saved === true) {
+      buttonText = "Saved";
+    } else if (this.props.saved === false) {
+      buttonText = "Save To Recipe Box";
+    }
     const klass = this.props.classStart + " " + this.props.classStr;
     return(
       <button onClick={this.handleClick}
-        className={klass}></button>
+        className={klass}>
+        <div></div>
+        {buttonText}</button>
     );
   }
 
