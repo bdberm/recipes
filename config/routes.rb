@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       post 'save'
       delete 'unsave'
       resources :comments, only: [:create]
+      resources :ratings, only: [:create]
     end
     resources :comments, only: [:update, :destroy]
+    resources :ratings, only: [:update, :destroy]
   end
 end

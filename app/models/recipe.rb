@@ -22,7 +22,9 @@ class Recipe < ApplicationRecord
     through: :recipe_saves,
     source: :user
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
+
+  has_many :ratings, dependent: :destroy
 
 
 

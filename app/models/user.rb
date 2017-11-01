@@ -33,7 +33,9 @@ class User < ApplicationRecord
     through: :recipe_saves,
     source: :recipe
 
-  has_many :comments  
+  has_many :ratings, dependent: :destroy
+
+  has_many :comments, dependent: :destroy
 
   attr_reader :password
 

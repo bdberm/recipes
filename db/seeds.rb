@@ -65,7 +65,7 @@ RecipeSave.destroy_all
 i = 0
 while i < 100
   begin
-    RecipeSave.create({user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id})
+    RecipeSave.create!({user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id})
     i += 1
   rescue
   end
@@ -82,4 +82,14 @@ Comment.destroy_all
     body: Faker::Lovecraft.paragraph(3)
   })
 
+end
+
+Rating.destroy_all
+i = 0
+while i < 500
+  begin
+    Rating.create!({user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id, rating: rand(5) + 1})
+    i += 1
+  rescue
+  end
 end
