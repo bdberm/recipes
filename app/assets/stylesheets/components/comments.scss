@@ -16,6 +16,28 @@
   border-bottom: 1px solid #ccc;
 }
 
+.add-comment-button {
+
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  width: 91.5%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 3;
+  font-style: italic;
+  color: #ccc;
+}
+
+.comments-container > div:first-of-type {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
 .comment {
   width: 100%;
   border-bottom: 1px solid #ccc;
