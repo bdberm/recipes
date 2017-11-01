@@ -3,6 +3,8 @@ import {convertMinutesToTimeString} from '../../util/time_converter';
 import RecipeSaveButtonContainer from './recipe_save_button_container';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_container';
+import {Transition} from 'react-transition-group';
+
 
 class RecipeShow extends React.Component {
 

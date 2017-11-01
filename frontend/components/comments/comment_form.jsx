@@ -1,11 +1,11 @@
 import React from 'react';
-import {Transition} from 'react-transition-group';
 
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {comment_name: `${props.currentUser.name}`, body:""};
+    this.state = {comment_name: `${props.currentUser.name}`, body:"",
+     show: false};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Comment from './comment';
 
+
 class CommentIndex extends React.Component {
 
   render() {
