@@ -17,12 +17,21 @@ json.recipe do
   json.steps steps
   json.image_url asset_path(@recipe.image.url)
   json.commentIds @recipe.comment_ids
+  json.ratingIds @recipe.rating_ids
 end
 
 json.comments do
   @recipe.comments.each do |comment|
     json.set! comment.id do
       json.partial! '/api/comments/comment', comment: comment
+    end
+  end
+end
+
+json.ratings do
+  @recipe.ratings.each do |rating|
+    json.set! rating.id do
+      json.partial! '/api/ratings/rating', rating: rating
     end
   end
 end
