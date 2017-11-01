@@ -1,4 +1,4 @@
-class Api::CommentsController < ApplicationController
+class Api::RatingsController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     user = self.current_user
@@ -17,7 +17,7 @@ class Api::CommentsController < ApplicationController
     @rating = Rating.find(params[:id])
 
     if @rating.update_attributes(rating_params)
-      @recipe = Recipe.find(comment.recipe_id)
+      @recipe = Recipe.find(@rating.recipe_id)
       render "api/recipes/ratings"
     else
       render json: @rating.errors.full_messages, status: 422

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {searchRecipes} from './util/search_util.js';
+import * as RatingAPIUtil from './util/rating_api_util';
 
 
 
@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
-  window.searchRecipes = searchRecipes;
+  window.createRating = RatingAPIUtil.createRating;
+  window.deleteRating = RatingAPIUtil.deleteRating;
+  window.updateRating = RatingAPIUtil.updateRating;
+
 
 
   const root = document.getElementById('root');

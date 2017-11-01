@@ -20,7 +20,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     if @comment.update_attributes(comment_params)
-      @recipe = Recipe.find(comment.recipe_id)
+      @recipe = Recipe.find(@comment.recipe_id)
       render "api/recipes/comments"
     else
       render json: @comment.errors.full_messages, status: 422
