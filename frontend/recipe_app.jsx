@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import * as RatingAPIUtil from './util/rating_api_util';
+import {createRating, deleteRating, updateRating} from './actions/rating_actions';
 
 
 
@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
-  window.createRating = RatingAPIUtil.createRating;
-  window.deleteRating = RatingAPIUtil.deleteRating;
-  window.updateRating = RatingAPIUtil.updateRating;
+  window.createRating = createRating;
+  window.deleteRating = deleteRating;
+  window.updateRating = updateRating;
 
 
 

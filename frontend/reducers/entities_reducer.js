@@ -6,4 +6,5 @@ import ratings from './ratings/ratings_reducer';
 export default combineReducers({
   recipes,
   comments,
+  ratings,
 });

@@ -35,13 +35,13 @@ const SessionReducer = (oldState = _defaultState, action) => {
       return {currentUser: user};
     case RECEIVE_RATING:
       user = oldState.currentUser;
-      user.ratingIds.push(action.payload.rating.id);
+      user.ratedRecipeIds.push(action.payload.rating.recipe_id);
       return {currentUser: user};
     case REMOVE_RATING:
       user = oldState.currentUser;
-      index = user.ratingIds.indexOf(action.payload.rating.id);
+      index = user.ratedRecipeIds.indexOf(action.payload.rating.recipe_id);
       if (index !== -1) {
-        user.ratingIds.splice(index, 1);
+        user.ratedRecipeIds.splice(index, 1);
       }
       return {currentUser: user};
     default:
