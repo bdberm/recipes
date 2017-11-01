@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {convertMinutesToTimeString} from '../../util/time_converter';
 import RecipeIndexItemSaveContainer from './recipe_index_item_save_container';
+import {TweenMax} from 'gsap';
 
 
 const RecipeIndexItem = ({recipe}) => (
@@ -18,5 +19,7 @@ const RecipeIndexItem = ({recipe}) => (
   </div>
   </Link>
 );
+
+
 
 export default RecipeIndexItem;

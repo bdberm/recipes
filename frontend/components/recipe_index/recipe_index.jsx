@@ -12,9 +12,11 @@ class RecipeIndex extends React.Component {
 
   render() {
 
-    const recipes = this.props.recipes.map((recipe, idx) => {
-      return <RecipeIndexItem key={idx} recipe={recipe} />;
-    });
+    const recipes = this.props.recipes.map((recipe, idx) => (
+
+        <RecipeIndexItem key={idx} recipe={recipe} />
+
+    ));
 
     let headerText = "";
     let subheaderText = "";
@@ -34,6 +36,7 @@ class RecipeIndex extends React.Component {
     }
 
     return (
+
       <div className="index-wrapper">
         {feature}
         <div className = 'index-header'>
