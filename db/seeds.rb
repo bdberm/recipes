@@ -19,6 +19,19 @@ User.create({email: 'mark@nytimes.com', password:'starwars', name: 'Mark Bittman
 User.create({email: 'melissa@nytimes.com', password:'starwars', name: 'Melissa Clark'})
 User.create({email: 'florence@nytimes.com', password:'starwars', name: 'Florence Fabricant'})
 User.create({email: 'pierre@nytimes.com', password:'starwars', name: 'Pierre Franey'})
+User.create({email: 'ethan@gmail.com', password:'starwars', name: 'Ethan Schneider'})
+User.create({email: 'chan@gmail.com', password:'starwars', name: 'Chan Fao'})
+User.create({email: 'noe@gmail.com', password:'starwars', name: 'Noe Jimenez'})
+User.create({email: 'neil@gmail.com', password:'starwars', name: 'Neil Gerwitz'})
+User.create({email: 'chris@gmail.com', password:'starwars', name: 'Chris Lew'})
+User.create({email: 'dan@gmail.com', password:'starwars', name: 'Dan Nam'})
+User.create({email: 'emily@gmail.com', password:'starwars', name: 'Emily Hansen'})
+User.create({email: 'elliot@gmail.com', password:'starwars', name: 'Elliot Grieco'})
+User.create({email: 'isaac@gmail.com', password:'starwars', name: 'Isaac Seessel'})
+User.create({email: 'isaac@gmail.com', password:'starwars', name: 'Isaac Seessel'})
+User.create({email: 'tommy@gmail.com', password:'starwars', name: 'Tommy Ren'})
+
+
 
 Recipe.destroy_all
 feature = Recipe.new({title: 'Dill-Roasted Potatoes', yield: '4 servings', time_minutes: 90,
@@ -63,7 +76,7 @@ end
 
 RecipeSave.destroy_all
 i = 0
-while i < 100
+while i < 200
   begin
     RecipeSave.create!({user_id: User.all.sample.id, recipe_id: Recipe.all.sample.id})
     i += 1
@@ -73,7 +86,7 @@ while i < 100
 end
 
 Comment.destroy_all
-300.times do
+425.times do
   u = User.all.sample
 
   Comment.create!({user_id: u.id,

@@ -14,10 +14,9 @@ const CommentsReducer = (oldState = _defaultState, action) => {
     case REMOVE_COMMENT:
       const newState = merge({}, oldState);
       delete newState[action.payload.comment.id];
-      return newState;    
+      return newState;
     default:
       return oldState;
-
   }
 };
 
