@@ -1,4 +1,5 @@
 import React from 'react';
+import {Transition} from 'react-transition-group';
 
 class CommentForm extends React.Component {
   constructor(props) {
