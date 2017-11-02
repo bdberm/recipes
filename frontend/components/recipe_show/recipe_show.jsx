@@ -94,15 +94,15 @@ class RecipeShow extends React.Component {
         </section>
         <section className = "ratings-bar">
           <div>
-            <h3>{numRatings} ratings</h3>
-            <ul className="ratings">
-              {overallStars}
-            </ul>
-          </div>
-          <div>
             <h3>{ratingStr}</h3>
             <ul className="ratings">
               {userStars}
+            </ul>
+          </div>
+          <div>
+            <h3>{numRatings} ratings</h3>
+            <ul className="ratings">
+              {overallStars}
             </ul>
           </div>
         </section>
