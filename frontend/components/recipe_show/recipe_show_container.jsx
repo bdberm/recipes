@@ -30,7 +30,7 @@ const mapStateToProps = (state, ownProps) => {
       && state.session.currentUser.ratedRecipeIds.includes(recipe.id)) {
       currentUserRating = myRatings.filter((rating) => (
         rating.user_id === state.session.currentUser.id
-      ))[0].rating;
+      ))[0];
     }
   }
 

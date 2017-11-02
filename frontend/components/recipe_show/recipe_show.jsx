@@ -4,6 +4,7 @@ import RecipeSaveButtonContainer from './recipe_save_button_container';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_container';
 import OverallRating from '../ratings/overall_rating';
+import UserRatingContainer from '../ratings/user_rating_container';
 
 
 class RecipeShow extends React.Component {
@@ -26,11 +27,19 @@ class RecipeShow extends React.Component {
   }
 
   render() {
-    
-    const {recipe, numRatings, averageRating} = this.props;
+
+    const {recipe, numRatings, averageRating, currentUserRating} = this.props;
     let ingredients = [];
     let steps = [];
     let overallStars = [];
+
+    let userStars = [1,2,3,4,5].map((val) => (
+      <UserRatingContainer key={val}  ratingVal = {val}
+        currentUserRating={currentUserRating} recipeId = {recipe.id}
+        />
+    ));
+
+    let ratingStr = "Rate recipe";
 
     if (recipe.ingredients) {
        ingredients = recipe.ingredients.map((ingredient, idx) => (
@@ -48,12 +57,22 @@ class RecipeShow extends React.Component {
     }
 
     if (averageRating) {
+
       const comparison = Math.round(averageRating);
       overallStars = [1,2,3,4,5].map((val) => (
         <OverallRating key={val} comparison={comparison} ratingVal={val} />
       ));
     }
 
+    if (currentUserRating) {
+      ratingStr = "Your rating";
+      const comparison = Math.round(currentUserRating.rating);
+      userStars = [1,2,3,4,5].map((val) => (
+        <UserRatingContainer key={val} currentRating={currentUserRating} ratingVal = {val}
+          currentUserRating={currentUserRating} recipeId = {recipe.id}
+          />
+      ));
+    }
 
 
     return (
@@ -78,6 +97,12 @@ class RecipeShow extends React.Component {
             <h3>{numRatings} ratings</h3>
             <ul className="ratings">
               {overallStars}
+            </ul>
+          </div>
+          <div>
+            <h3>{ratingStr}</h3>
+            <ul className="ratings">
+              {userStars}
             </ul>
           </div>
         </section>
