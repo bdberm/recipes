@@ -5,7 +5,7 @@ import {createRating, updateRating} from '../../actions/rating_actions';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   let action;
-  if (ownProps.currentUserRating) {
+  if (ownProps.currentRating) {
     action = ((rating) => dispatch(updateRating(rating)));
   } else {
     action = ((rating) => dispatch(createRating(rating, ownProps.recipeId)));

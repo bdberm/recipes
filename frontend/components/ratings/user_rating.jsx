@@ -1,9 +1,18 @@
 import React from 'react';
 
+
 class UserRating extends React.Component {
   constructor(props) {
     super(props);
+
+
     this.handleClick = this.handleClick.bind(this);
+    this.handleHover = this.handleHover.bind(this);
+  }
+
+  handleHover(e) {
+    const {setHoverRating, ratingVal} = this.props;
+    this.props.setHoverRating(ratingVal);
   }
 
   handleClick(e) {
@@ -11,6 +20,7 @@ class UserRating extends React.Component {
     const rating = {rating: ratingVal};
 
     if (currentRating) {
+
       rating.id = currentRating.id;
       action(rating);
     } else {
@@ -18,9 +28,11 @@ class UserRating extends React.Component {
     }
   }
 
+
+
   render() {
-    const {currentRating, ratingVal, action} = this.props;
-    const comparison  = currentRating ? currentRating.rating : null;
+    const {ratingVal, action, comparison} = this.props;
+
     let classStr;
 
     if (!comparison) {
@@ -33,7 +45,10 @@ class UserRating extends React.Component {
     }
 
     return (
-      <li className={classStr} onClick={this.handleClick}></li>
+      <li className={classStr} val={ratingVal}
+        onMouseEnter={this.handleHover} onClick={this.handleClick}>
+
+      </li>
     );
   }
 }

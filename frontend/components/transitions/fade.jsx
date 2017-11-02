@@ -38,7 +38,6 @@ export class CommentFade extends React.Component {
     this.state = {in: false};
 
     setTimeout((() => {
-      console.log("timeout done");
       this.setState({in: true});
     }),1);
   }
@@ -61,3 +60,38 @@ export class CommentFade extends React.Component {
 
   }
 }
+
+
+const hoverDuration = 1;
+
+const ratingHoverDefaultStyle = {
+  display: "none"
+};
+
+const ratingHoverTransitionStyle = {
+  entered: {display: "block",
+    position: "absolute",
+    left: -35,
+    bottom: -20,
+    width: "170px",
+    height: "80px",
+    border: "1px solid #ccc",
+    background: "white",
+    zIndex: -1,
+  }
+};
+
+export const RatingHover = ({ in: inProp, component: Component }) => {
+
+  return (<Transition in={inProp} timeout={hoverDuration}>
+    {(state) => {
+
+      const _style = merge({}, ratingHoverDefaultStyle, ratingHoverTransitionStyle[state]);
+
+        return (<div style={_style}>
+          {Component}
+        </div>);
+    }}
+  </Transition>
+  );
+};

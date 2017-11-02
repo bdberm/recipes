@@ -5,9 +5,20 @@ import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_container';
 import OverallRating from '../ratings/overall_rating';
 import UserRatingContainer from '../ratings/user_rating_container';
+import {RatingHover} from '../transitions/fade';
+
 
 
 class RecipeShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {ratingHover: false, hoverComp: 0};
+
+    this.ratingHoverUp = this.ratingHoverUp.bind(this);
+    this.ratingHoverDown = this.ratingHoverDown.bind(this);
+    this.setHoverRating = this.setHoverRating.bind(this);
+  }
 
   componentWillMount() {
     window.scrollTo(0, 0);
@@ -26,16 +37,36 @@ class RecipeShow extends React.Component {
     }
   }
 
+  ratingHoverUp(e)  {
+    console.log(parseInt(e.target.getAttribute("val")));
+    this.setState({
+      ratingHover: true,
+      hoverComp: parseInt(e.target.getAttribute("val")),
+    });
+  }
+
+  ratingHoverDown(e)  {
+    this.setState({ratingHover: false});
+  }
+
+  setHoverRating(val) {
+    this.setState({hoverComp: val});
+  }
+
+
+
+
   render() {
 
     const {recipe, numRatings, averageRating, currentUserRating} = this.props;
     let ingredients = [];
     let steps = [];
     let overallStars = [];
+    // let userStars =[];
 
     let userStars = [1,2,3,4,5].map((val) => (
       <UserRatingContainer key={val}  ratingVal = {val}
-        currentUserRating={currentUserRating} recipeId = {recipe.id}
+        currentRating={currentUserRating} recipeId = {recipe.id}
         />
     ));
 
@@ -66,10 +97,18 @@ class RecipeShow extends React.Component {
 
     if (currentUserRating) {
       ratingStr = "Your rating";
-      const comparison = Math.round(currentUserRating.rating);
+
+      let comparison;
+      if (this.state.ratingHover) {
+        comparison = this.state.hoverComp;
+      } else if (currentUserRating) {
+        comparison = currentUserRating.rating;
+      }
+
+      // const comparison = Math.round(currentUserRating.rating);
       userStars = [1,2,3,4,5].map((val) => (
         <UserRatingContainer key={val} currentRating={currentUserRating} ratingVal = {val}
-          currentUserRating={currentUserRating} recipeId = {recipe.id}
+           recipeId = {recipe.id} comparison={comparison} setHoverRating={this.setHoverRating}
           />
       ));
     }
@@ -95,7 +134,8 @@ class RecipeShow extends React.Component {
         <section className = "ratings-bar">
           <div>
             <h3>{ratingStr}</h3>
-            <ul className="ratings">
+            <ul onMouseEnter = {this.ratingHoverUp} onMouseLeave = {this.ratingHoverDown} className="ratings">
+              <RatingHover in={this.state.ratingHover} component={<div></div>} />
               {userStars}
             </ul>
           </div>
