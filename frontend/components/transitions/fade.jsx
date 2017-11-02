@@ -75,7 +75,7 @@ const ratingHoverTransitionStyle = {
     bottom: -20,
     width: "170px",
     height: "80px",
-    border: "1px solid #ccc",
+    border: "1px solid #F5F5F5",
     background: "white",
     zIndex: -1,
   }

@@ -7,7 +7,13 @@ import OverallRating from '../ratings/overall_rating';
 import UserRatingContainer from '../ratings/user_rating_container';
 import {RatingHover} from '../transitions/fade';
 
-
+const hoverStrings = {
+  1: "Not Worth It",
+  2: "Fine",
+  3: "Good",
+  4: "Really Good",
+  5: "Delicious!"
+};
 
 class RecipeShow extends React.Component {
   constructor(props) {
@@ -39,10 +45,7 @@ class RecipeShow extends React.Component {
 
   ratingHoverUp(e)  {
     console.log(parseInt(e.target.getAttribute("val")));
-    this.setState({
-      ratingHover: true,
-      hoverComp: parseInt(e.target.getAttribute("val")),
-    });
+    this.setState({ratingHover: true});
   }
 
   ratingHoverDown(e)  {
@@ -59,6 +62,7 @@ class RecipeShow extends React.Component {
   render() {
 
     const {recipe, numRatings, averageRating, currentUserRating} = this.props;
+    const {ratingHover, hoverComp} = this.state;
     let ingredients = [];
     let steps = [];
     let overallStars = [];
@@ -99,8 +103,8 @@ class RecipeShow extends React.Component {
       ratingStr = "Your rating";
 
       let comparison;
-      if (this.state.ratingHover) {
-        comparison = this.state.hoverComp;
+      if (ratingHover) {
+        comparison = hoverComp;
       } else if (currentUserRating) {
         comparison = currentUserRating.rating;
       }
@@ -112,6 +116,9 @@ class RecipeShow extends React.Component {
           />
       ));
     }
+
+
+
 
 
     return (
@@ -135,7 +142,8 @@ class RecipeShow extends React.Component {
           <div>
             <h3>{ratingStr}</h3>
             <ul onMouseEnter = {this.ratingHoverUp} onMouseLeave = {this.ratingHoverDown} className="ratings">
-              <RatingHover in={this.state.ratingHover} component={<div></div>} />
+              <RatingHover in={this.state.ratingHover} component=
+                {<div className = "ratings-hover">{hoverStrings[hoverComp]}</div>} />
               {userStars}
             </ul>
           </div>
