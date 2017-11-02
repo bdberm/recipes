@@ -20,4 +20,6 @@ const Comment = ({comment, currentUser, deleteComment}) => {
   );
 };
 
+
+
 export default Comment;

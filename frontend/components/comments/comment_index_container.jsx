@@ -17,10 +17,10 @@ const mapStateToProps = (state, ownProps) => {
 
     const time1 = new Date(comment1.created_at);
     const time2 = new Date(comment2.created_at);
-    
-    if (time1 < time2) {
+
+    if (time1 > time2) {
       return 1;
-    } else if (time1 > time2) {
+    } else if (time1 < time2) {
       return -1;
     } else {
       return 0;

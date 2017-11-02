@@ -22,6 +22,7 @@ export const FormFade = ({ in: inProp, component: Component }) => {
 
   return (<Transition in={inProp} timeout={duration}>
     {(state) => {
+
       const _style = merge({}, formDefaultStyle, formTransitionStyles[state]);
         return (<div style={_style}>
           {Component}
@@ -30,3 +31,33 @@ export const FormFade = ({ in: inProp, component: Component }) => {
   </Transition>
   );
 };
+
+export class CommentFade extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {in: false};
+
+    setTimeout((() => {
+      console.log("timeout done");
+      this.setState({in: true});
+    }),1);
+  }
+
+
+
+  render() {
+    const {component: Component } = this.props;
+
+    return (<Transition in={this.state.in} timeout={duration}>
+      {(state) => {
+
+        const _style = merge({}, formDefaultStyle, formTransitionStyles[state]);
+          return (<div style={_style}>
+            {Component}
+          </div>);
+      }}
+    </Transition>
+    );
+
+  }
+}

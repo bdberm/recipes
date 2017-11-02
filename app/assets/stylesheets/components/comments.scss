@@ -7,6 +7,11 @@
   width: 100%;
 }
 
+.comments-index > ul {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .comments-container > h3 {
   font-size: 13px;
   font-weight: bold;
