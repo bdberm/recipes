@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
   let averageRating;
   let numRatings = 0;
+  let currentUserRating;
   if (recipe.ratingIds) {
     const allRatings = Object.values(state.entities.ratings);
     const myRatings = allRatings.filter((rating) => (
@@ -23,7 +24,14 @@ const mapStateToProps = (state, ownProps) => {
 
     numRatings = myRatings.length;
     averageRating = myRatingsSum / numRatings;
-    
+
+
+    if (state.session.currentUser
+      && state.session.currentUser.ratedRecipeIds.includes(recipe.id)) {
+      currentUserRating = myRatings.filter((rating) => (
+        rating.user_id === state.session.currentUser.id
+      ))[0].rating;
+    }
   }
 
 
@@ -31,6 +39,7 @@ const mapStateToProps = (state, ownProps) => {
     recipe,
     numRatings,
     averageRating,
+    currentUserRating,
   };
 };
 

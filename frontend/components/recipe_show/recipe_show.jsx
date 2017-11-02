@@ -26,6 +26,7 @@ class RecipeShow extends React.Component {
   }
 
   render() {
+    
     const {recipe, numRatings, averageRating} = this.props;
     let ingredients = [];
     let steps = [];
