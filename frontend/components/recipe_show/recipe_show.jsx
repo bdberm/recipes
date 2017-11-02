@@ -66,15 +66,21 @@ class RecipeShow extends React.Component {
     let ingredients = [];
     let steps = [];
     let overallStars = [];
-    // let userStars =[];
 
-    let userStars = [1,2,3,4,5].map((val) => (
-      <UserRatingContainer key={val}  ratingVal = {val}
-        currentRating={currentUserRating} recipeId = {recipe.id}
+    let comparison;
+    if (ratingHover) {
+      comparison = hoverComp;
+    } else if (currentUserRating) {
+      comparison = currentUserRating.rating;
+    }
+
+    const userStars = [1,2,3,4,5].map((val) => (
+      <UserRatingContainer key={val} currentRating={currentUserRating} ratingVal = {val}
+         recipeId = {recipe.id} comparison={comparison} setHoverRating={this.setHoverRating}
         />
     ));
 
-    let ratingStr = "Rate recipe";
+    const ratingStr = currentUserRating ? "Your rating" : "Rate recipe";
 
     if (recipe.ingredients) {
        ingredients = recipe.ingredients.map((ingredient, idx) => (
@@ -93,33 +99,11 @@ class RecipeShow extends React.Component {
 
     if (averageRating) {
 
-      const comparison = Math.round(averageRating);
+      const avgComp = Math.round(averageRating);
       overallStars = [1,2,3,4,5].map((val) => (
-        <OverallRating key={val} comparison={comparison} ratingVal={val} />
+        <OverallRating key={val} comparison={avgComp} ratingVal={val} />
       ));
     }
-
-    if (currentUserRating) {
-      ratingStr = "Your rating";
-
-      let comparison;
-      if (ratingHover) {
-        comparison = hoverComp;
-      } else if (currentUserRating) {
-        comparison = currentUserRating.rating;
-      }
-
-      // const comparison = Math.round(currentUserRating.rating);
-      userStars = [1,2,3,4,5].map((val) => (
-        <UserRatingContainer key={val} currentRating={currentUserRating} ratingVal = {val}
-           recipeId = {recipe.id} comparison={comparison} setHoverRating={this.setHoverRating}
-          />
-      ));
-    }
-
-
-
-
 
     return (
       <section className = "recipe-show">
