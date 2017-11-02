@@ -1,0 +1,40 @@
+.ratings-bar {
+  display: flex;
+  width: 100%;
+  height: 58px;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.ratings-bar > div {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.ratings-bar > div > h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 7px;
+}
+
+.ratings-bar > div > ul {
+  display: flex;
+
+}
+
+.overall-filled {
+  background-image: image-url("star-rating-filled-red.png");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+
+}
+
+.overall-empty {
+  background-image: image-url("star-rating-unfilled.png");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
