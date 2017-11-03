@@ -53,7 +53,7 @@ A recipe show page will show the number and average of all ratings users have le
 ## Future Direction
 
 Planned future features include:
- * ability to reply to a cooking note with your own note
- * ability to like comments and include a "most helpful" comments tab indicating which comments users liked the most
+ * Ability to reply to a cooking note with your own note
+ * Ability to like comments and include a "most helpful" comments tab indicating which comments users liked the most
  * Tags/Categories are applied to recipes and displayed on the recipe show page. If a user clicks on a tag it will bring them to an index view of all recipes tagged with that tagged
  * Recipe Creation - Users can create new recipes. They can optionally upload an associated image and tag the recipe. They can choose whether or not to make the recipe public or private to just them
