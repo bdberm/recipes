@@ -4,7 +4,7 @@
 
 FoodSnob is a full-stack web application inspired by the Cooking micro-site of the New York Times. It utilizes a Ruby on Rails backend, a PostgreSQL database and a React.js frontend utilizing a Redux store.
 
-##Technologies
+## Technologies
  * Ruby on Rails
  * Javascript
  * PostgreSQL
@@ -14,9 +14,9 @@ FoodSnob is a full-stack web application inspired by the Cooking micro-site of t
  * Lodash
  * Node.js
 
-##Features
+## Features
 
-###Recipes Index
+### Recipes Index
 Users can view a list of recipes within the index view. Each recipe's title, image, author and estimated time to prepare is shown.
 
-![index]() 
+![index](https://github.com/bdberm/recipes/blob/master/readme_gifs/index.gif) 
