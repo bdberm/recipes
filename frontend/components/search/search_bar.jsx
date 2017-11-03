@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleExit = this.handleExit.bind(this);
     this.handleKey = this.handleKey.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +34,10 @@ class SearchBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.history.push(`/search/${this.state.searchTerm}`);
+    this.clearSearch();
+  }
+
+  clearSearch(e) {
     this.setState({searchTerm: ""});
   }
 
@@ -47,7 +51,7 @@ class SearchBar extends React.Component {
     } else {
       searchResults = searchRecipes(this.props.recipes, this.state.searchTerm)
       .map((recipe, idx) => {
-        return <SearchResultItem classStr="search-result-item"
+        return <SearchResultItem classStr="search-result-item" clearSearch={this.clearSearch}
           recipe={recipe} key={idx} history={this.props.history}/>;
 
       }
