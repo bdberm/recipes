@@ -13,7 +13,7 @@ class CommentIndex extends React.Component {
     // });
 
     const comments = this.props.comments.map((comment) => {
-      return <CommentFade component={
+      return <CommentFade key={comment.id} component={
           <Comment key={comment.id} comment={comment} currentUser ={this.props.currentUser}
             deleteComment={this.props.deleteComment}/>
         } />;
