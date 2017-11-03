@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Demo](https://recipe-manage-app.herokuapp.com/#/)
 
-Things you may want to cover:
+FoodSnob is a full-stack web application inspired by the Cooking micro-site of the New York Times. It utilizes a Ruby on Rails backend, a PostgreSQL database and a React.js frontend utilizing a Redux store.
 
-* Ruby version
+##Technologies
+ * Ruby on Rails
+ * Javascript
+ * PostgreSQL
+ * React
+ * Redux
+ * React Transition Group
+ * Lodash
+ * Node.js
 
-* System dependencies
+##Features
 
-* Configuration
+###Recipes Index
+Users can view a list of recipes within the index view. Each recipe's title, image, author and estimated time to prepare is shown.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![index]() 
