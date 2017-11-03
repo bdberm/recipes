@@ -86,7 +86,7 @@ while i < 200
 end
 
 Comment.destroy_all
-425.times do
+300.times do
   u = User.all.sample
 
   Comment.create!({user_id: u.id,
@@ -94,6 +94,23 @@ Comment.destroy_all
     comment_name: u.name,
     body: Faker::Lovecraft.paragraph(3)
   })
+end
+
+200.times do
+  u = User.all.sample
+  r = Recipe.all.sample
+
+  parent = Comment.all[rand(300)]
+
+
+  Comment.create!({
+    recipe_id: r.id,
+    user_id: u.id,
+    comment_name: u.name,
+    parent_id: parent.id,
+    body: Faker::Lovecraft.paragraph(2)
+  })
+
 
 end
 
