@@ -19,4 +19,33 @@ FoodSnob is a full-stack web application inspired by the Cooking micro-site of t
 ### Recipes Index
 Users can view a list of recipes within the index view. Each recipe's title, image, author and estimated time to prepare is shown.
 
-![index](https://github.com/bdberm/recipes/blob/master/readme_gifs/index.gif) 
+There is a featured "Recipe Of The Day" showcased on the main page with an attendant hero image.
+
+![index](https://github.com/bdberm/recipes/blob/master/readme_gifs/index.gif)
+
+### Recipe Show Page
+Users can view a recipe show page. Each recipe's description, author, yield, and time to prepare are shown at the top.  Just below is the overall rating and number of ratings, as well as the user's own rating if he/she has already rated the recipe. On scroll you see the ingredients and the steps needed to make the recipe. At the bottom of the page you can see all cooking notes left by users on the recipe. The show page is designed responsively so that elements stack vertically on smaller screens.
+
+![show](https://github.com/bdberm/recipes/blob/master/readme_gifs/show.gif)
+
+### Saving Recipes
+A user can save or unsave a recipe to their Recipe Box from any index view or on any recipe show page. Clicking to unsave pops up a modal to confirm that the user wants to remove that recipe from their Recipe Box.
+
+All saved recipes are accessible to a user in their Recipe Box.
+
+![save](https://github.com/bdberm/recipes/blob/master/readme_gifs/save.gif)
+
+### Recipe Search
+Users can search for recipes in the search bar within the page header. Search results are automatically displayed. If a user clicks on a search result it will take the user to that recipe's show page. If a user presses enter they will go to an index view of the search results.
+
+### Cooking Notes
+A user can post a cooking note on a recipe show page which will be visible to all users who visit that show page.
+
+A user can delete any of their own cooking notes.
+
+![note](https://github.com/bdberm/recipes/blob/master/readme_gifs/note.gif)
+
+### Recipe Ratings
+A recipe show page will show the number and average of all ratings users have left on that recipe. It will also show the user's personal rating if they have left one. A user can change their rating once they have made one.
+
+![rating](https://github.com/bdberm/recipes/blob/master/readme_gifs/rating.gif)
