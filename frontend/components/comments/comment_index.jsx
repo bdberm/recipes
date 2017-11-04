@@ -7,15 +7,15 @@ class CommentIndex extends React.Component {
 
   render() {
 
-    // const comments = this.props.comments.map((comment, idx) => {
-    //   return <Comment key={idx} comment={comment} currentUser={this.props.currentUser}
-    //     deleteComment={this.props.deleteComment}/>;
-    // });
+    const comments = this.props.comments.filter((c) => {
+      return !c.parent_id;
+    }).map((comment) => {
 
-    const comments = this.props.comments.map((comment) => {
+
+
       return <CommentFade key={comment.id} component={
           <Comment key={comment.id} comment={comment} currentUser ={this.props.currentUser}
-            deleteComment={this.props.deleteComment}/>
+            deleteComment={this.props.deleteComment} level={1} comments={this.props.comments}/>
         } />;
     });
 

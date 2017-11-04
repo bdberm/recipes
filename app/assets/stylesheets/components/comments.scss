@@ -79,6 +79,15 @@
   font-size: 16px;
 }
 
+.child-index {
+  padding-left: 20px;
+}
+
+.child-index > .comment {
+  border: none;
+  padding-bottom: 0;
+}
+
 @media screen and (max-width: 800px) {
   .comments-container {
     width: 100%;

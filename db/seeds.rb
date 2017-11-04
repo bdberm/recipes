@@ -98,13 +98,13 @@ end
 
 200.times do
   u = User.all.sample
-  r = Recipe.all.sample
+
 
   parent = Comment.all[rand(300)]
 
 
   Comment.create!({
-    recipe_id: r.id,
+    recipe_id: parent.recipe_id,
     user_id: u.id,
     comment_name: u.name,
     parent_id: parent.id,
