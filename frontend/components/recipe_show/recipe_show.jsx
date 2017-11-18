@@ -155,7 +155,7 @@ class RecipeShow extends React.Component {
         <section className="comments-container">
           <h3>Cooking Notes</h3>
           <CreateCommentContainer recipeId={recipe.id} />
-          <CommentIndexContainer commentIds={recipe.commentIds}/>
+          <CommentIndexContainer commentIds={recipe.commentIds} canReply={true}/>
         </section>
       </section>
     );

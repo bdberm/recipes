@@ -3,13 +3,13 @@ import {calcTimeSinceCreate} from '../../util/time_converter';
 import {CommentFade} from '../transitions/fade';
 
 
-const Comment = ({comment, currentUser, deleteComment, level, comments}) => {
+const Comment = ({comment, currentUser, deleteComment, level, comments, canReply}) => {
   let comp;
 
   if (currentUser.commentIds.includes(comment.id)) {
     comp = <button onClick={() => deleteComment(comment.id)}>Delete</button>;
   }
-  
+
 
   const children = comments.filter((c) => {
     return c.parent_id === comment.id;
@@ -17,10 +17,12 @@ const Comment = ({comment, currentUser, deleteComment, level, comments}) => {
 
   const childComments = children.map((c) => {
     return <Comment key={c.id} comment={c} currentUser={currentUser}
-      deleteComment={deleteComment} comments={comments}
+      deleteComment={deleteComment} comments={comments} canReply={false}
        />;
   });
 
+  const replyButton = (canReply) ?
+    <button className="reply-button">Reply</button> : <div></div>;
 
 
   return (
@@ -31,6 +33,7 @@ const Comment = ({comment, currentUser, deleteComment, level, comments}) => {
         {comp}
       </div>
       <p>{comment.body}</p>
+      {replyButton}
       <ul className="child-index">
         {childComments}
       </ul>

@@ -15,7 +15,8 @@ class CommentIndex extends React.Component {
 
       return <CommentFade key={comment.id} component={
           <Comment key={comment.id} comment={comment} currentUser ={this.props.currentUser}
-            deleteComment={this.props.deleteComment} level={1} comments={this.props.comments}/>
+            deleteComment={this.props.deleteComment} level={1} comments={this.props.comments}
+            canReply={this.props.canReply}/>
         } />;
     });
 
