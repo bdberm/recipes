@@ -6,7 +6,7 @@ class CommentForm extends React.Component {
     super(props);
 
     this.state = {comment_name: `${props.currentUser.name}`, body:"",
-     show: false, showForm: false};
+     show: false, showForm: false, parent_id: props.parentId};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.toggleShowForm = this.toggleShowForm.bind(this);
@@ -45,16 +45,19 @@ class CommentForm extends React.Component {
     const inputButtonClass = (this.props.parentId) ? "add-comment-button hide"
     : "add-comment-button";
 
-    const replyButtonClass = (this.props.reply) ? "reply-comment-button"
+    const replyButtonClass = (this.props.parentId) ? "reply-comment-button"
     : "reply-comment-button hide";
 
     return(
       <div>
         <FormFade in={Boolean(!showForm)} component={
             <button className={inputButtonClass}
-              onClick={this.toggleShowForm}>Share a note with other cooks or leave a private note</button>
-          }
+              onClick={this.toggleShowForm}>Share a note with other cooks or leave a private note</button>}
           />
+
+        <button className={replyButtonClass}
+          onClick={this.toggleShowForm}>Reply</button>
+
         <FormFade in={Boolean(showForm)}  component={
             <form className="comment-form">
               <input onChange={this.handleInput("comment_name")} type="text"

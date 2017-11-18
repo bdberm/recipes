@@ -20,7 +20,9 @@ const Comment = ({comment, currentUser, deleteComment, level, comments, canReply
       deleteComment={deleteComment} comments={comments} canReply={false}
        />;
   });
-
+  const replyForm = (canReply) ?
+    <CreateCommentContainer recipeId={comment.recipe_id} parentId={comment.id}/> :
+    <div></div>;
 
   return (
     <div className="comment">
@@ -30,8 +32,7 @@ const Comment = ({comment, currentUser, deleteComment, level, comments, canReply
         {comp}
       </div>
       <p>{comment.body}</p>
-
-      <CreateCommentContainer recipeId={comment.recipe_id} parentId={comment.id}/>
+      {replyForm}
       <ul className="child-index">
         {childComments}
       </ul>
