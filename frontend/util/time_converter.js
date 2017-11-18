@@ -33,7 +33,7 @@ export const calcTimeSinceCreate = (createdDate) => {
   const now = new Date();
   const dayDiff = Math.floor(((now-time) / 86400000));
 
-  if (dayDiff === 0) {
+  if (dayDiff <= 0) {
     return ("today");
   } else if (dayDiff === 1) {
     return ("yesterday");
