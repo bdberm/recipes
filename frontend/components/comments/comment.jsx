@@ -1,9 +1,11 @@
 import React from 'react';
 import {calcTimeSinceCreate} from '../../util/time_converter';
 import CreateCommentContainer from './create_comment_container';
+import {CommentFade} from '../transitions/fade';
 
 
-const Comment = ({comment, currentUser, deleteComment, level, comments, canReply}) => {
+
+const Comment = ({comment, currentUser, deleteComment, comments, canReply}) => {
   let comp;
 
   if (currentUser.commentIds.includes(comment.id)) {
@@ -16,9 +18,10 @@ const Comment = ({comment, currentUser, deleteComment, level, comments, canReply
   });
 
   const childComments = children.map((c) => {
-    return <Comment key={c.id} comment={c} currentUser={currentUser}
-      deleteComment={deleteComment} comments={comments} canReply={false}
-       />;
+    return <CommentFade key={c.id} component={<Comment key={c.id} comment={c}
+      currentUser={currentUser} deleteComment={deleteComment}
+      comments={comments} canReply={false}/>}
+    />;
   });
   const replyForm = (canReply) ?
     <CreateCommentContainer recipeId={comment.recipe_id} parentId={comment.id}/> :

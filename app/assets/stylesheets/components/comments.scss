@@ -49,8 +49,12 @@
   padding: 25px 0;
 }
 
-.comment:last-of-type {
+.comments-index > ul > .comment:last-of-type {
   padding-bottom: 50px;
+}
+
+.comment > ul  .comment:last-of-type {
+  border: 0px;
 }
 
 .comment-header > h3 {
@@ -81,6 +85,8 @@
 
 .child-index {
   padding-left: 20px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .child-index > .comment {
@@ -88,6 +94,9 @@
   padding-bottom: 0;
 }
 
+.child-index > .comment {
+  border: 0px;
+}
 @media screen and (max-width: 800px) {
   .comments-container {
     width: 100%;

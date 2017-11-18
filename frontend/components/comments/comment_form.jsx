@@ -22,6 +22,7 @@ class CommentForm extends React.Component {
       (() => {
         this.props.removeErrors();
         this.setState({body:""});
+        window.setTimeout(this.toggleShowForm, 1500);
       })
     );
 

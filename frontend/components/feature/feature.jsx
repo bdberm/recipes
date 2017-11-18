@@ -8,8 +8,12 @@ class Feature extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchRecipe(this.props.recipe.id);
+    if(this.props.recipe.id) {
+      this.props.fetchRecipe(this.props.recipe.id);
+    }
   }
+
+  
 
   handleClick(e) {
     this.props.history.push(`/recipes/${this.props.recipe.id}`);
