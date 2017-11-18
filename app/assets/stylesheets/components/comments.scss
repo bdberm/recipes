@@ -97,6 +97,14 @@
 .child-index > .comment {
   border: 0px;
 }
+
+.reply-comment-button {
+  margin-top: 8px;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
 @media screen and (max-width: 800px) {
   .comments-container {
     width: 100%;
