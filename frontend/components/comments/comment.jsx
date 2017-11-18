@@ -1,6 +1,6 @@
 import React from 'react';
 import {calcTimeSinceCreate} from '../../util/time_converter';
-import {CommentFade} from '../transitions/fade';
+import CreateCommentContainer from './create_comment_container';
 
 
 const Comment = ({comment, currentUser, deleteComment, level, comments, canReply}) => {
@@ -21,9 +21,6 @@ const Comment = ({comment, currentUser, deleteComment, level, comments, canReply
        />;
   });
 
-  const replyButton = (canReply) ?
-    <button className="reply-button">Reply</button> : <div></div>;
-
 
   return (
     <div className="comment">
@@ -33,7 +30,8 @@ const Comment = ({comment, currentUser, deleteComment, level, comments, canReply
         {comp}
       </div>
       <p>{comment.body}</p>
-      {replyButton}
+
+      <CreateCommentContainer recipeId={comment.recipe_id} parentId={comment.id}/>
       <ul className="child-index">
         {childComments}
       </ul>

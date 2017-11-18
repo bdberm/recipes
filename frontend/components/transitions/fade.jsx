@@ -14,8 +14,6 @@ const formDefaultStyle = {
 const formTransitionStyles = {
   entering: {opacity:0, display: "block"},
   entered: {opacity: 1, display: "block"},
-
-
 };
 
 export const FormFade = ({ in: inProp, component: Component }) => {

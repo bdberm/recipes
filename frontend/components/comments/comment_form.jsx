@@ -42,10 +42,16 @@ class CommentForm extends React.Component {
     const {currentUser} = this.props;
     const {showForm, comment_name, body} = this.state;
 
+    const inputButtonClass = (this.props.parentId) ? "add-comment-button hide"
+    : "add-comment-button";
+
+    const replyButtonClass = (this.props.reply) ? "reply-comment-button"
+    : "reply-comment-button hide";
+
     return(
       <div>
         <FormFade in={Boolean(!showForm)} component={
-            <button className="add-comment-button"
+            <button className={inputButtonClass}
               onClick={this.toggleShowForm}>Share a note with other cooks or leave a private note</button>
           }
           />
