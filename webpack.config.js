@@ -1,4 +1,5 @@
 const path = require('path');
+require 'webpack';
 
 module.exports = {
   context: __dirname,
