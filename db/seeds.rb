@@ -1,12 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 User.destroy_all
+Recipe.destroy_all
+Ingredient.destroy_all
+Step.destroy_all
+RecipeSave.destroy_all
+Comment.destroy_all
+Rating.destroy_all
 
 User.create({email: 'ben@gmail.com', password: 'starwars', name: 'Benjamin Berman'})
 User.create({email: 'mike@gmail.com', password: 'starwars', name: 'Michael Cohen'})
@@ -32,15 +30,27 @@ User.create({email: 'isaac@gmail.com', password:'starwars', name: 'Isaac Seessel
 User.create({email: 'tommy@gmail.com', password:'starwars', name: 'Tommy Ren'})
 
 
-
-Recipe.destroy_all
-feature = Recipe.new({title: 'Dill-Roasted Potatoes', yield: '4 servings', time_minutes: 90,
-  description: "Tangy dill elevates these roast potatoes beyond the ordinary. Enjoy with a simple steak and a glass of good red wine",
+#Cornbread
+feature = Recipe.new({title: 'Brown Butter Skillet Cornbread', yield: '12 servings', time_minutes: 60,
+  description: "This lightly sweet cornbread has a crunchy, buttery crust, which comes from baking it in a hot skillet. If you have a cast-iron pan, this is the time to use it. The heavy, heat-retaining material will give you the darkest color (which equals the most flavor). But any large ovenproof skillet will work. And if you don’t have a skillet big enough to hold all the batter, you can either halve the recipe or bake the cornbread in 9-by-13-inch pan. (Brown the butter first in a saucepan.) Your bread won’t have the same dark crust, but the moist crumb flavored with brown butter and maple syrup is ample recompense.",
   author_id: User.first.id, featured: true
   })
 
-feature.image = File.open("app/assets/images/feature.png")
+feature.image = File.open("app/assets/images/cornbread.png")
 feature.save
+
+Ingredient.create!({recipe_id: Recipe.all.last.id, content: "12 tablespoons (1 1/2 sticks)/170 grams unsalted butter", ord: 1})
+Ingredient.create!({recipe_id: Recipe.all.last.id, content: "½ cup/120 ml maple syrup", ord: 2})
+Ingredient.create!({recipe_id: Recipe.all.last.id, content: "2 ¼ cups/530 ml buttermilk", ord: 3})
+Ingredient.create!({recipe_id: Recipe.all.last.id, content: "3 large eggs", ord: 4})
+Ingredient.create!({recipe_id: Recipe.all.last.id, content: "1 ½ cups/180 grams yellow cornmeal, fine or medium-coarse grind", ord: 5})
+Ingredient.create!({recipe_id: Recipe.all.last.id, content: "½ cup/65 grams whole wheat flour", ord: 6})
+Ingredient.create!({recipe_id: Recipe.all.last.id, content: "1 ½ tablespoons/18 grams baking powder", ord: 7})
+Ingredient.create!({recipe_id: Recipe.all.last.id, content: "1 ½ teaspoons/9 grams kosher salt", ord: 8})
+
+
+
+
 
 50.times do
   r = Recipe.new({author_id: User.all.sample.id,
@@ -56,7 +66,6 @@ feature.save
   r.save!
 end
 
-Ingredient.destroy_all
 350.times do
   Ingredient.create!({
     recipe_id: Recipe.all.sample.id,
@@ -65,7 +74,6 @@ Ingredient.destroy_all
     })
 end
 
-Step.destroy_all
 350.times do
   Step.create!({
     recipe_id: Recipe.all.sample.id,
@@ -74,7 +82,6 @@ Step.destroy_all
     })
 end
 
-RecipeSave.destroy_all
 i = 0
 while i < 200
   begin
@@ -85,7 +92,6 @@ while i < 200
 
 end
 
-Comment.destroy_all
 300.times do
   u = User.all.sample
 
@@ -114,7 +120,6 @@ end
 
 end
 
-Rating.destroy_all
 i = 0
 while i < 500
   begin
