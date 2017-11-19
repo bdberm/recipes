@@ -99,7 +99,7 @@ Step.create!({recipe_id: asparagus.id,content: "In a wok or cast-iron skillet, h
 Step.create!({recipe_id: asparagus.id,content: "Transfer to a serving platter and scatter leaves on top. Serve immediately.",ord: 3})
 
 #chicken_fennel
-chicken_fennel = = Recipe.new({title: 'Roast Chicken With Fennel', yield: '4 servings', time_minutes: 40,
+chicken_fennel = Recipe.new({title: 'Roast Chicken With Fennel', yield: '4 servings', time_minutes: 40,
   description: "The kind of fennel we see in supermarkets (which, almost needless to say, is cultivated, not wild) is wonderful when cooked to full tenderness, so I thought it might make a good base for chicken, which is heavier than fish and takes longer to cook. The idea was that the fennel would lend its flavor to the chicken, the chicken would lend its juices to the fennel and the creation would need little else. The results were better than expected. Garnished with parsley and served with a bit of lemon (especially when caramelized, fennel can be quite sweet), the dish has an elegant look and delicious, surprisingly complex flavor.",
   author_id: User.all.sample.id, featured: false
   })
@@ -250,7 +250,7 @@ sesame_noodles = Recipe.new({title: 'Takeout-Style Sesame Noodles', yield: '4 se
   description: "Eddie Schoenfeld, the affable yarn-spinner and restaurateur who opened Red Farm in the West Village and on the Upper West Side of Manhattan, is also one of New York's finest practitioners of Chinese cuisine. In 2007, he helped The Times drill down into the taste history of sesame noodles in America, and specifically to the ones made and sold by Shorty Tang at the restaurant Hwa Yuan on East Broadway. Soft and luxurious, bathed in an emulsified mixture of sesame paste and peanut butter, rendered vivid and fiery by chili oil and sweetened by sugar, then cut by vinegar, this version brings home what used to be classic New York takeout. “The art is in the balance,” Mr. Schoenfeld said at the time, “between the salt and sweet, the sweet and the fire, and the fire and the acidity.”",
   author_id: User.all.sample.id, featured: false
   })
-sesame_noodles = File.open("app/assets/images/sesame_noodles.jpg")
+sesame_noodles.image = File.open("app/assets/images/sesame_noodles.jpg")
 sesame_noodles.save
 
 Ingredient.create!({recipe_id: sesame_noodles.id, content: "1 pound Chinese egg noodles (1/8-inch-thick), frozen or (preferably) fresh, available in Asian markets", ord: 1})
@@ -415,7 +415,7 @@ Step.create!({recipe_id: sesame_chicken.id,content: "Transfer chicken to a platt
 
 #potatoes
 potatoes = Recipe.new({title: 'Sweeney Potatoes', yield: '8 to 10 servings', time_minutes: 60,
-  description: "This is a variation of a dish sometimes called "company potatoes," popular in the postwar kitchens of the 1950s, made with canned condensed soups and frozen hash browns. Maura Passanisi, of Alameda, Calif., shared it with The Times as a tribute to her grandmother, Florence Sweeney, who originally served it as a Thanksgiving side dish. Ms. Passanisi uses fresh russet potatoes and no condensed soup, but plenty of cream cheese, sour cream, butter and cheese. "Legendary," she calls the dish. And so it is. Small portions are best. It's rich. And feeds a crowd.",
+  description: 'This is a variation of a dish sometimes called "company potatoes," popular in the postwar kitchens of the 1950s, made with canned condensed soups and frozen hash browns. Maura Passanisi, of Alameda, Calif., shared it with The Times as a tribute to her grandmother, Florence Sweeney, who originally served it as a Thanksgiving side dish. Ms. Passanisi uses fresh russet potatoes and no condensed soup, but plenty of cream cheese, sour cream, butter and cheese. "Legendary," she calls the dish. And so it is. Small portions are best. It\'s rich. And feeds a crowd.',
   author_id: User.all.sample.id, featured: false})
 potatoes.image = File.open("app/assets/images/sweeney_potatoes.jpg")
 potatoes.save
@@ -468,8 +468,9 @@ end
 
 200.times do
   idx = rand(20...Recipe.all.length)
+  recipe = Recipe.all.order(:id)[idx]
   Ingredient.create!({
-    recipe_id: Recipe.all[idx].id,
+    recipe_id: recipe.id,
     content: Faker::Food.ingredient,
     ord: rand(9) + 1
     })
@@ -477,8 +478,9 @@ end
 
 175.times do
   idx = rand(20...Recipe.all.length)
+  recipe = Recipe.all.order(:id)[idx]
   Step.create!({
-    recipe_id: Recipe.all[idx].id,
+    recipe_id: recipe.id,
     content: Faker::Hipster.paragraph(2),
     ord: rand(9) + 1
     })

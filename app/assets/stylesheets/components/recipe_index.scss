@@ -61,7 +61,7 @@
   height: 44%;
   background: white;
   padding-left: 12px;
-
+  position: relative;
 };
 
 .recipe-index-info h3 {
@@ -82,8 +82,9 @@
 .recipe-index-info h5 {
   color: #A9A9A9;
   font-size: 13px;
-  padding-top: 40px;
-
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
 }
 
 
