@@ -283,7 +283,7 @@ Ingredient.create!({recipe_id: rosemary_shortbread.id, content: "⅔ cup granula
 Ingredient.create!({recipe_id: rosemary_shortbread.id, content: "1 tablespoon finely chopped fresh rosemary", ord: 3})
 Ingredient.create!({recipe_id: rosemary_shortbread.id, content: "1 teaspoon plus 1 pinch kosher salt", ord: 4})
 Ingredient.create!({recipe_id: rosemary_shortbread.id, content: "1 cup (2 sticks) unsalted cold butter, cut into 1-inch chunks", ord: 5})
-Ingredient.create!({recipe_id: rosemary_shortbread.id, content: " to 2 teaspoons rosemary, chestnut or other dark, full-flavored honey (optional)", ord: 6})
+Ingredient.create!({recipe_id: rosemary_shortbread.id, content: "2 teaspoons rosemary, chestnut or other dark, full-flavored honey (optional)", ord: 6})
 
 Step.create!({recipe_id: rosemary_shortbread.id,content: "Heat oven to 325 degrees. In a food processor, pulse together flour, sugar, rosemary and salt. Add butter, and honey if desired, and pulse to fine crumbs. Pulse a few more times until some crumbs start to come together, but don't overprocess. Dough should not be smooth.",ord: 1})
 Step.create!({recipe_id: rosemary_shortbread.id,content: "Press dough into an ungreased 8- or 9-inch-square baking pan or 9-inch pie pan. Prick dough all over with a fork. Bake until golden brown, 35 to 40 minutes for 9-inch pan, 45 to 50 minutes for 8-inch. Transfer to a wire rack to cool. Cut into squares, bars or wedges while still warm.",ord: 2})
@@ -466,8 +466,8 @@ Step.create!({recipe_id: kale.id,content: "Add kale to the pan, turn the heat to
   r.save!
 end
 
-200.times do
-  idx = rand(20...Recipe.all.length)
+250.times do
+  idx = rand(21...Recipe.all.length)
   recipe = Recipe.all.order(:id)[idx]
   Ingredient.create!({
     recipe_id: recipe.id,
@@ -476,8 +476,8 @@ end
     })
 end
 
-175.times do
-  idx = rand(20...Recipe.all.length)
+150.times do
+  idx = rand(21...Recipe.all.length)
   recipe = Recipe.all.order(:id)[idx]
   Step.create!({
     recipe_id: recipe.id,
