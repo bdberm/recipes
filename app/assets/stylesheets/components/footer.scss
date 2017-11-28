@@ -1,0 +1,33 @@
+.footer {
+  height: 45px;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+  padding-top: 8px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 18px;
+  background: white;
+}
+
+.footer-content {
+  margin: 0 auto;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.footer-content a {
+  text-decoration: underline;
+  color: #e33d26;
+}
+
+.footer-content a:hover {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 750px) {
+  .footer-content {
+    width: 85%;
+  }
+}
