@@ -44,7 +44,6 @@ class RecipeShow extends React.Component {
   }
 
   ratingHoverUp(e)  {
-    console.log(parseInt(e.target.getAttribute("val")));
     this.setState({ratingHover: true});
   }
 
