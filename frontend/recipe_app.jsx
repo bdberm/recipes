@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {createRating, deleteRating, updateRating} from './actions/rating_actions';
 
 
 
@@ -13,10 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  window.store = store;
-  window.createRating = createRating;
-  window.deleteRating = deleteRating;
-  window.updateRating = updateRating;
 
 
 
